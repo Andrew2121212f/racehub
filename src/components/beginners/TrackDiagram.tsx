@@ -1,0 +1,133 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+// Анимированная SVG-схема ипподрома
+export default function TrackDiagram() {
+  return (
+    <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24 bg-editorial-bg-alt">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
+            Как устроена трасса
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-editorial-text leading-tight">
+            Анатомия ипподрома
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative max-w-4xl mx-auto"
+        >
+          {/* SVG-схема трассы */}
+          <svg viewBox="0 0 800 400" className="w-full" fill="none">
+            {/* Трасса — овал */}
+            <motion.ellipse
+              cx="400"
+              cy="200"
+              rx="340"
+              ry="150"
+              stroke="var(--editorial-border)"
+              strokeWidth="40"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            />
+
+            {/* Внутренняя линия */}
+            <ellipse
+              cx="400"
+              cy="200"
+              rx="300"
+              ry="110"
+              stroke="var(--editorial-border)"
+              strokeWidth="1"
+              strokeDasharray="6 6"
+              opacity="0.5"
+            />
+
+            {/* Финишная линия */}
+            <motion.line
+              x1="740"
+              y1="150"
+              x2="740"
+              y2="250"
+              stroke="var(--editorial-accent)"
+              strokeWidth="3"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 2 }}
+            />
+
+            {/* Бегущая лошадь — точка */}
+            <motion.circle
+              r="8"
+              fill="var(--editorial-accent)"
+              initial={{ offsetDistance: "0%" }}
+              whileInView={{ offsetDistance: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 4, ease: "easeInOut", delay: 0.5, repeat: Infinity }}
+              style={{
+                offsetPath: "path('M 740 200 A 340 150 0 1 0 739 200')",
+              }}
+            />
+          </svg>
+
+          {/* Метки */}
+          <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+            {/* Старт/Финиш */}
+            <div className="absolute right-[3%] top-1/2 -translate-y-1/2 text-right">
+              <div className="bg-editorial-accent text-white px-4 py-2 text-xs tracking-wider uppercase">
+                Старт / Финиш
+              </div>
+            </div>
+
+            {/* Первый поворот */}
+            <div className="absolute right-[15%] top-[5%]">
+              <span className="text-editorial-text-muted text-xs tracking-wider">
+                1-й поворот
+              </span>
+            </div>
+
+            {/* Дальняя прямая */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-[5%]">
+              <span className="text-editorial-text-muted text-xs tracking-wider">
+                Дальняя прямая
+              </span>
+            </div>
+
+            {/* Второй поворот */}
+            <div className="absolute left-[15%] top-[5%]">
+              <span className="text-editorial-text-muted text-xs tracking-wider">
+                2-й поворот
+              </span>
+            </div>
+
+            {/* Финишная прямая */}
+            <div className="absolute right-[15%] bottom-[5%]">
+              <span className="text-editorial-accent text-xs tracking-wider font-medium">
+                Финишная прямая →
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        <p className="text-center text-editorial-text-muted text-sm mt-12 max-w-lg mx-auto italic">
+          Большинство ипподромов имеют овальную форму. Решающий рывок происходит на финишной прямой — последних 200-400 метрах.
+        </p>
+      </div>
+    </section>
+  );
+}

@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
+/* ============================================
+   ШРИФТЫ (подключаются через next/font)
+   ============================================ */
+
+/* ============================================
+   EDITORIAL ТЕМА (Лендинг 1 — Для новичков)
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --editorial-bg: #FAF8F5;
+  --editorial-bg-alt: #F0EDE8;
+  --editorial-text: #1A1A1A;
+  --editorial-text-muted: #6B6B6B;
+  --editorial-accent: #6B1D2A;
+  --editorial-accent-light: #8B3A4A;
+  --editorial-border: #E0DCD6;
+  --editorial-card-bg: #FFFFFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================
+   DARK + GOLD ТЕМА (Лендинг 2 — Скачки 2026)
+   ============================================ */
+:root {
+  --dark-bg: #0A0A0A;
+  --dark-bg-alt: #141414;
+  --dark-surface: #1A1A1A;
+  --dark-surface-hover: #242424;
+  --dark-text: #F5F5F0;
+  --dark-text-muted: #8A8A80;
+  --dark-gold: #C5A55A;
+  --dark-gold-light: #D4B86A;
+  --dark-gold-dim: #8B7740;
+  --dark-border: #2A2A2A;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   БАЗОВЫЕ СТИЛИ (Tailwind 4 уже включает preflight)
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--editorial-accent);
+  color: white;
+}
+
+/* ============================================
+   GRAIN ТЕКСТУРА (шум на фоне — анти-AI приём)
+   ============================================ */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ============================================
+   EDITORIAL-СПЕЦИФИЧНЫЕ СТИЛИ
+   ============================================ */
+.editorial-page {
+  background-color: var(--editorial-bg);
+  color: var(--editorial-text);
+}
+
+.editorial-page ::selection {
+  background: var(--editorial-accent);
+  color: white;
+}
+
+/* ============================================
+   DARK-СПЕЦИФИЧНЫЕ СТИЛИ
+   ============================================ */
+.dark-page {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.dark-page ::selection {
+  background: var(--dark-gold);
+  color: black;
+}
+
+/* ============================================
+   ЗОЛОТОЙ SHIMMER ЭФФЕКТ (кнопки dark-темы)
+   ============================================ */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    110deg,
+    var(--dark-gold) 0%,
+    var(--dark-gold-light) 40%,
+    #E8D48B 50%,
+    var(--dark-gold-light) 60%,
+    var(--dark-gold) 100%
+  );
+  background-size: 200% 100%;
+}
+
+.gold-shimmer:hover {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ============================================
+   ЗОЛОТАЯ РАМКА С GLOW
+   ============================================ */
+.gold-border {
+  border: 1px solid var(--dark-gold-dim);
+  transition: all 0.4s ease;
+}
+
+.gold-border:hover {
+  border-color: var(--dark-gold);
+  box-shadow: 0 0 30px rgba(197, 165, 90, 0.1),
+              0 0 60px rgba(197, 165, 90, 0.05);
+}
+
+/* ============================================
+   EDITORIAL РАЗДЕЛИТЕЛЬ
+   ============================================ */
+.editorial-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--editorial-accent);
+}
+
+/* ============================================
+   АНИМАЦИИ
+   ============================================ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+/* Большие номера для шагов */
+.step-number {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 200;
+  line-height: 1;
+  color: var(--editorial-border);
+}
+
+/* ============================================
+   TAILWIND ТЕМА
+   ============================================ */
+@theme inline {
+  --color-editorial-bg: var(--editorial-bg);
+  --color-editorial-bg-alt: var(--editorial-bg-alt);
+  --color-editorial-text: var(--editorial-text);
+  --color-editorial-text-muted: var(--editorial-text-muted);
+  --color-editorial-accent: var(--editorial-accent);
+  --color-editorial-accent-light: var(--editorial-accent-light);
+  --color-editorial-border: var(--editorial-border);
+  --color-editorial-card-bg: var(--editorial-card-bg);
+
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-bg-alt: var(--dark-bg-alt);
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-surface-hover: var(--dark-surface-hover);
+  --color-dark-text: var(--dark-text);
+  --color-dark-text-muted: var(--dark-text-muted);
+  --color-dark-gold: var(--dark-gold);
+  --color-dark-gold-light: var(--dark-gold-light);
+  --color-dark-gold-dim: var(--dark-gold-dim);
+  --color-dark-border: var(--dark-border);
 }
