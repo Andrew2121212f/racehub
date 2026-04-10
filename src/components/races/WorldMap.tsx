@@ -1,18 +1,77 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
-// Точки событий на карте
+// События на карте — координаты в % от изображения карты
 const locations = [
-  { name: "Grand National", city: "Ливерпуль", x: 47, y: 28, id: "grand-national" },
-  { name: "Kentucky Derby", city: "Луисвилл", x: 22, y: 35, id: "kentucky-derby" },
-  { name: "Preakness Stakes", city: "Балтимор", x: 25, y: 34, id: "preakness" },
-  { name: "Prix de l'Arc", city: "Париж", x: 49, y: 30, id: "arc" },
-  { name: "Breeders' Cup", city: "США", x: 18, y: 38, id: "breeders-cup" },
+  {
+    name: "Grand National",
+    city: "Ливерпуль, Англия",
+    date: "Апрель 2026",
+    prize: "£1M",
+    distance: "7,2 км",
+    horses: "40",
+    x: 48,
+    y: 24,
+    id: "grand-national",
+    image: "/races/grand-national.jpg",
+  },
+  {
+    name: "Kentucky Derby",
+    city: "Луисвилл, США",
+    date: "Май 2026",
+    prize: "$3M",
+    distance: "2 км",
+    horses: "20",
+    x: 22,
+    y: 37,
+    id: "kentucky-derby",
+    image: "/races/kentucky-derby.jpg",
+  },
+  {
+    name: "Preakness Stakes",
+    city: "Балтимор, США",
+    date: "Май 2026",
+    prize: "$1.5M",
+    distance: "1,9 км",
+    horses: "14",
+    x: 25,
+    y: 35,
+    id: "preakness",
+    image: "/races/preakness.jpg",
+  },
+  {
+    name: "Prix de l'Arc",
+    city: "Париж, Франция",
+    date: "Октябрь 2026",
+    prize: "€5M",
+    distance: "2,4 км",
+    horses: "20",
+    x: 50,
+    y: 27,
+    id: "arc",
+    image: "/races/prix-arc.jpg",
+  },
+  {
+    name: "Breeders' Cup",
+    city: "Дель Мар, США",
+    date: "Октябрь 2026",
+    prize: "$31M",
+    distance: "Разные",
+    horses: "200+",
+    x: 13,
+    y: 39,
+    id: "breeders-cup",
+    image: "/races/breeders-cup.jpg",
+  },
 ];
 
-// Карта мира с точками событий
+// Карта мира с реальным фоном + интерактивные точки
 export default function WorldMap() {
+  const [hoveredEvent, setHoveredEvent] = useState<string | null>(null);
+  const activeEvent = locations.find((l) => l.id === hoveredEvent);
+
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24 bg-dark-bg-alt">
       <div className="max-w-6xl mx-auto">
@@ -21,7 +80,7 @@ export default function WorldMap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <p className="text-dark-gold text-xs tracking-[0.5em] uppercase mb-8">
             География
@@ -31,131 +90,160 @@ export default function WorldMap() {
           </h2>
         </motion.div>
 
-        {/* Карта */}
+        {/* Карта — десктоп */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative aspect-[2/1] max-w-5xl mx-auto"
+          className="relative hidden md:block"
         >
-          {/* Упрощённая SVG-карта мира */}
-          <svg viewBox="0 0 100 50" className="w-full h-full" fill="none">
-            {/* Контуры континентов — упрощённые */}
-            {/* Северная Америка */}
-            <path
-              d="M 10 15 Q 15 10 22 12 L 28 15 Q 30 20 28 28 L 25 35 Q 22 40 18 38 L 12 32 Q 8 25 10 15"
-              fill="var(--dark-surface)"
-              stroke="var(--dark-border)"
-              strokeWidth="0.3"
-            />
-            {/* Южная Америка */}
-            <path
-              d="M 22 40 Q 25 38 27 42 L 28 48 Q 26 52 24 50 L 22 45 Q 20 42 22 40"
-              fill="var(--dark-surface)"
-              stroke="var(--dark-border)"
-              strokeWidth="0.3"
-            />
-            {/* Европа */}
-            <path
-              d="M 44 12 Q 48 10 52 12 L 55 15 Q 54 20 52 22 L 48 25 Q 45 22 44 18 Z"
-              fill="var(--dark-surface)"
-              stroke="var(--dark-border)"
-              strokeWidth="0.3"
-            />
-            {/* Африка */}
-            <path
-              d="M 46 26 Q 50 24 54 26 L 56 32 Q 55 40 52 44 L 48 42 Q 44 36 46 26"
-              fill="var(--dark-surface)"
-              stroke="var(--dark-border)"
-              strokeWidth="0.3"
-            />
-            {/* Азия */}
-            <path
-              d="M 55 10 Q 65 8 78 12 L 82 18 Q 80 25 75 28 L 65 30 Q 58 28 55 22 Z"
-              fill="var(--dark-surface)"
-              stroke="var(--dark-border)"
-              strokeWidth="0.3"
-            />
-            {/* Австралия */}
-            <path
-              d="M 78 36 Q 82 34 86 36 L 88 40 Q 86 44 82 44 L 78 42 Z"
-              fill="var(--dark-surface)"
-              stroke="var(--dark-border)"
-              strokeWidth="0.3"
+          {/* Реальная карта мира как фон */}
+          <div className="relative aspect-[16/9] overflow-hidden rounded-sm">
+            <img
+              src="/races-world-map.jpg"
+              alt="Карта мира"
+              className="w-full h-full object-cover opacity-50"
             />
 
-            {/* Линии между точками */}
-            {locations.slice(0, -1).map((loc, i) => {
-              const next = locations[i + 1];
-              return (
-                <motion.line
-                  key={`line-${i}`}
-                  x1={loc.x}
-                  y1={loc.y}
-                  x2={next.x}
-                  y2={next.y}
-                  stroke="var(--dark-gold-dim)"
-                  strokeWidth="0.15"
-                  strokeDasharray="0.5 0.5"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 + i * 0.2 }}
-                />
-              );
-            })}
+            {/* Золотой оверлей */}
+            <div className="absolute inset-0 bg-gradient-to-b from-dark-gold/5 via-transparent to-dark-gold/5 mix-blend-overlay" />
 
             {/* Точки событий */}
             {locations.map((loc, i) => (
-              <g key={loc.id}>
-                {/* Пульсирующий круг */}
-                <motion.circle
-                  cx={loc.x}
-                  cy={loc.y}
-                  r="1.5"
-                  fill="var(--dark-gold)"
-                  opacity="0.3"
-                  initial={{ r: 0.5 }}
-                  whileInView={{ r: [0.5, 2, 0.5] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }}
+              <motion.div
+                key={loc.id}
+                className="absolute z-20 cursor-pointer group"
+                style={{
+                  left: `${loc.x}%`,
+                  top: `${loc.y}%`,
+                  transform: "translate(-50%, -50%)",
+                }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + i * 0.15, type: "spring" }}
+                onMouseEnter={() => setHoveredEvent(loc.id)}
+                onMouseLeave={() => setHoveredEvent(null)}
+              >
+                {/* Пульсирующий ореол */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-dark-gold/20"
+                  animate={{
+                    scale: [1, 2.5, 1],
+                    opacity: [0.4, 0, 0.4],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
+                  style={{ width: 24, height: 24, margin: -4 }}
                 />
-                {/* Основная точка */}
-                <motion.circle
-                  cx={loc.x}
-                  cy={loc.y}
-                  r="0.8"
-                  fill="var(--dark-gold)"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.3 + i * 0.15 }}
+                {/* Точка — крупная, яркая */}
+                <div
+                  className={`w-5 h-5 rounded-full border-2 transition-all duration-300 ${
+                    hoveredEvent === loc.id
+                      ? "bg-dark-gold border-white scale-150 shadow-[0_0_30px_rgba(197,165,90,0.8)]"
+                      : "bg-dark-gold border-dark-gold shadow-[0_0_12px_rgba(197,165,90,0.4)]"
+                  }`}
                 />
-              </g>
+              </motion.div>
             ))}
-          </svg>
 
-          {/* Лейблы поверх карты */}
+            {/* Постоянные лейблы */}
+            {locations.map((loc, i) => (
+              <motion.div
+                key={`label-${loc.id}`}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.0 + i * 0.15 }}
+                className="absolute z-10 pointer-events-none"
+                style={{
+                  left: `${loc.x}%`,
+                  top: `${loc.y + 4}%`,
+                  transform: "translateX(-50%)",
+                }}
+              >
+                <p className="text-dark-gold text-xs md:text-sm font-medium whitespace-nowrap text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  {loc.name}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Инфо-карточка при hover — привязана к позиции точки */}
+          <AnimatePresence>
+            {activeEvent && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute z-30 bg-dark-surface border border-dark-gold/30 overflow-hidden rounded-sm shadow-2xl shadow-black/50 w-[300px]"
+                style={{
+                  left: `${Math.min(activeEvent.x + 3, 68)}%`,
+                  top: `${Math.max(activeEvent.y - 10, 5)}%`,
+                }}
+              >
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={activeEvent.image}
+                    alt={activeEvent.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-dark-gold text-sm font-medium mb-1">
+                    {activeEvent.name}
+                  </p>
+                  <p className="text-dark-text-muted text-xs mb-3">
+                    {activeEvent.city} · {activeEvent.date}
+                  </p>
+                  <div className="grid grid-cols-3 gap-3 pt-3 border-t border-dark-border">
+                    <div>
+                      <p className="text-dark-gold text-sm font-medium">{activeEvent.prize}</p>
+                      <p className="text-dark-text-muted text-[10px]">Призовые</p>
+                    </div>
+                    <div>
+                      <p className="text-dark-text text-sm font-medium">{activeEvent.distance}</p>
+                      <p className="text-dark-text-muted text-[10px]">Дистанция</p>
+                    </div>
+                    <div>
+                      <p className="text-dark-text text-sm font-medium">{activeEvent.horses}</p>
+                      <p className="text-dark-text-muted text-[10px]">Лошадей</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Мобильный — карточки */}
+        <div className="md:hidden space-y-4 mt-8">
           {locations.map((loc, i) => (
             <motion.div
-              key={`label-${loc.id}`}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={loc.id}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8 + i * 0.15 }}
-              className="absolute transform -translate-x-1/2"
-              style={{ left: `${loc.x}%`, top: `${loc.y + 5}%` }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-center gap-4 p-4 border border-dark-border hover:border-dark-gold/40 transition-colors overflow-hidden"
             >
-              <p className="text-dark-gold text-[10px] md:text-xs font-medium whitespace-nowrap">
-                {loc.name}
-              </p>
-              <p className="text-dark-text-muted text-[8px] md:text-[10px] whitespace-nowrap">
-                {loc.city}
-              </p>
+              <img
+                src={loc.image}
+                alt={loc.name}
+                className="w-16 h-16 object-cover rounded-sm shrink-0"
+              />
+              <div className="flex-1 min-w-0">
+                <p className="text-dark-text font-medium text-sm">{loc.name}</p>
+                <p className="text-dark-text-muted text-xs">{loc.city}</p>
+              </div>
+              <div className="text-right shrink-0">
+                <p className="text-dark-gold text-xs font-medium">{loc.prize}</p>
+                <p className="text-dark-text-muted text-[10px]">{loc.date}</p>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

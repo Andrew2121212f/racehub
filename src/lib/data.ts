@@ -37,7 +37,7 @@ export const horses: Horse[] = [
     why: "Это выбор для тех, кто хочет минимизировать риск и играть на стабильности. Лёгкий вес и опытный жокей делают его особенно опасным на длинной дистанции.",
     event: "Grand National Festival 2026",
     eventLink: "/races#grand-national",
-    image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&q=80",
+    image: "/horses/iroko.jpg",
   },
   {
     id: "commandment",
@@ -48,7 +48,7 @@ export const horses: Horse[] = [
     why: "Идеален для тех, кто хочет почувствовать адреналин: ставка на него — это всегда «всё или ничего». В паре с сильным жокеем он может задать темп, который просто «сломает» гонку.",
     event: "Kentucky Derby 2026",
     eventLink: "/races#kentucky-derby",
-    image: "https://images.unsplash.com/photo-1598974357801-cbca100e65d3?w=800&q=80",
+    image: "/horses/commandment.jpg",
   },
   {
     id: "barnes",
@@ -59,7 +59,7 @@ export const horses: Horse[] = [
     why: "Это идеальный «умный выбор» — не самый хайповый, но часто самый выгодный. В руках одного из лучших жокеев США он становится ещё более опасным.",
     event: "Preakness Stakes 2026",
     eventLink: "/races#preakness",
-    image: "https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=800&q=80",
+    image: "/horses/barnes.jpg",
   },
   {
     id: "minnie-hauk",
@@ -70,7 +70,7 @@ export const horses: Horse[] = [
     why: "Ставка на неё — это выбор в пользу очевидного таланта. А опытный жокей мирового уровня усиливает ощущение, что всё «под контролем».",
     event: "Prix de l'Arc de Triomphe 2026",
     eventLink: "/races#arc",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    image: "/horses/minnie-hauk.jpg",
   },
   {
     id: "senor-buscador",
@@ -81,7 +81,7 @@ export const horses: Horse[] = [
     why: "Это история про возвращение, за которое хочется болеть. С таким жокеем он способен выжать максимум даже в самых сложных гонках.",
     event: "Breeders' Cup 2026",
     eventLink: "/races#breeders-cup",
-    image: "https://images.unsplash.com/photo-1516475429286-465d815a0df7?w=800&q=80",
+    image: "/horses/senor-buscador.jpg",
   },
 ];
 
@@ -94,7 +94,7 @@ export const raceEvents: RaceEvent[] = [
     month: "АПР",
     description:
       "Grand National — это испытание на выживание, где фавориты часто уступают тем, кто просто выдержал дистанцию. Каждая секунда наполнена напряжением, а финиш — это почти всегда история вопреки ожиданиям.",
-    image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1400&q=80",
+    image: "/races/grand-national.jpg",
   },
   {
     id: "kentucky-derby",
@@ -103,7 +103,7 @@ export const raceEvents: RaceEvent[] = [
     month: "МАЙ",
     description:
       "Kentucky Derby — это момент, когда рождаются звёзды. Молодые лошади выходят на старт с шансом войти в историю.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+    image: "/races/kentucky-derby.jpg",
   },
   {
     id: "preakness",
@@ -112,7 +112,7 @@ export const raceEvents: RaceEvent[] = [
     month: "МАЙ",
     description:
       "После Derby именно здесь решается, есть ли у чемпиона настоящий запас прочности. Preakness — это гонка, где стратегия выходит на первый план, а ошибки стоят слишком дорого.",
-    image: "https://images.unsplash.com/photo-1598974357801-cbca100e65d3?w=1400&q=80",
+    image: "/races/preakness.jpg",
   },
   {
     id: "arc",
@@ -121,7 +121,7 @@ export const raceEvents: RaceEvent[] = [
     month: "ОКТ",
     description:
       "Arc — это главная гонка Европы, где сходятся лучшие из лучших.",
-    image: "https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=1400&q=80",
+    image: "/races/prix-arc.jpg",
   },
   {
     id: "breeders-cup",
@@ -130,6 +130,6 @@ export const raceEvents: RaceEvent[] = [
     month: "ОКТ",
     description:
       "Breeders' Cup — это финальный аккорд сезона, фактически «чемпионат мира», который собирает лучших со всех континентов.",
-    image: "https://images.unsplash.com/photo-1516475429286-465d815a0df7?w=1400&q=80",
+    image: "/races/breeders-cup.jpg",
   },
 ];

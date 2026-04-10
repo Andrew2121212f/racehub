@@ -17,8 +17,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RaceHub — Скачки 2026",
-  description: "Всё о скачках: гид для новичков и главные события сезона 2026",
+  title: {
+    default: "RaceHub — Скачки 2026",
+    template: "%s | RaceHub",
+  },
+  description: "Всё о скачках: гид для новичков и главные события сезона 2026. Grand National, Kentucky Derby, Prix de l'Arc de Triomphe.",
+  keywords: ["скачки", "horse racing", "Grand National", "Kentucky Derby", "ставки", "2026"],
+  openGraph: {
+    title: "RaceHub — Скачки 2026",
+    description: "Гид для новичков и главные события сезона 2026",
+    type: "website",
+    locale: "ru_RU",
+  },
 };
 
 export default function RootLayout({

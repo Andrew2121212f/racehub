@@ -16,7 +16,7 @@ export default function HeroEditorial() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={heroVideos.beginners} type="video/mp4" />
+          <source src="/funfacts-bg.mp4" type="video/mp4" />
         </video>
         {/* Градиент поверх видео */}
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--editorial-bg)] via-[var(--editorial-bg)]/80 to-[var(--editorial-bg)]/30" />

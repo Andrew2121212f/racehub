@@ -2,61 +2,98 @@
 
 import { motion } from "framer-motion";
 
-// Данные для сравнительной таблицы
+// Данные для сравнительной таблицы с характеристиками для chart
 const horseStats = [
   {
     name: "Iroko",
-    country: "🇫🇷",
+    country: "\u{1F1EB}\u{1F1F7}",
     wins: 7,
-    winRate: "58%",
+    winRate: 58,
     bestDist: "Длинная",
     odds: 4.2,
     style: "Стабильный",
-    form: "████░",
+    form: "\u2588\u2588\u2588\u2588\u2591",
+    // Характеристики для визуализации (0-100)
+    speed: 65,
+    endurance: 85,
+    consistency: 80,
   },
   {
     name: "Commandment",
-    country: "🇺🇸",
+    country: "\u{1F1FA}\u{1F1F8}",
     wins: 5,
-    winRate: "63%",
+    winRate: 63,
     bestDist: "Спринт",
     odds: 3.1,
     style: "Агрессивный",
-    form: "█████",
+    form: "\u2588\u2588\u2588\u2588\u2588",
+    speed: 95,
+    endurance: 50,
+    consistency: 70,
   },
   {
     name: "Barnes",
-    country: "🇺🇸",
+    country: "\u{1F1FA}\u{1F1F8}",
     wins: 6,
-    winRate: "55%",
+    winRate: 55,
     bestDist: "Средняя",
     odds: 5.0,
     style: "Надёжный",
-    form: "███░░",
+    form: "\u2588\u2588\u2588\u2591\u2591",
+    speed: 70,
+    endurance: 75,
+    consistency: 85,
   },
   {
     name: "Minnie Hauk",
-    country: "🇫🇷",
+    country: "\u{1F1EB}\u{1F1F7}",
     wins: 4,
-    winRate: "67%",
+    winRate: 67,
     bestDist: "Средняя",
     odds: 2.8,
     style: "Классический",
-    form: "████░",
+    form: "\u2588\u2588\u2588\u2588\u2591",
+    speed: 80,
+    endurance: 70,
+    consistency: 90,
   },
   {
     name: "Senor Buscador",
-    country: "🇺🇸",
+    country: "\u{1F1FA}\u{1F1F8}",
     wins: 9,
-    winRate: "45%",
+    winRate: 45,
     bestDist: "Длинная",
     odds: 7.5,
     style: "Ветеран",
-    form: "██░░░",
+    form: "\u2588\u2588\u2591\u2591\u2591",
+    speed: 60,
+    endurance: 90,
+    consistency: 55,
   },
 ];
 
-// Таблица сравнения лошадей — editorial стиль
+const statLabels = [
+  { key: "speed" as const, label: "Скорость" },
+  { key: "endurance" as const, label: "Выносливость" },
+  { key: "consistency" as const, label: "Стабильность" },
+];
+
+// Горизонтальный bar для характеристики
+function StatBar({ value, delay }: { value: number; delay: number }) {
+  return (
+    <div className="relative h-1.5 bg-editorial-border/40 rounded-full overflow-hidden flex-1">
+      <motion.div
+        className="absolute top-0 left-0 h-full rounded-full bg-editorial-accent"
+        initial={{ width: "0%" }}
+        whileInView={{ width: `${value}%` }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay, ease: "easeOut" }}
+      />
+    </div>
+  );
+}
+
+// Таблица сравнения лошадей + визуальные характеристики
 export default function HorseComparison() {
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24 bg-editorial-bg-alt">
@@ -85,7 +122,7 @@ export default function HorseComparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="overflow-x-auto"
+          className="overflow-x-auto mb-20"
         >
           <table className="w-full min-w-[700px]">
             <thead>
@@ -137,7 +174,7 @@ export default function HorseComparison() {
                     </span>
                   </td>
                   <td className="text-center py-6 px-4">
-                    <span className="text-editorial-text font-medium">{horse.winRate}</span>
+                    <span className="text-editorial-text font-medium">{horse.winRate}%</span>
                   </td>
                   <td className="text-center py-6 px-4">
                     <span className="text-editorial-text-muted text-sm">{horse.bestDist}</span>
@@ -159,6 +196,44 @@ export default function HorseComparison() {
               ))}
             </tbody>
           </table>
+        </motion.div>
+
+        {/* Визуальные характеристики — bar charts */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-10">
+            Визуальное сравнение
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {statLabels.map((stat) => (
+              <div key={stat.key} className="bg-editorial-bg p-8 border border-editorial-border">
+                <h4 className="font-[family-name:var(--font-playfair)] text-lg text-editorial-text mb-6">
+                  {stat.label}
+                </h4>
+                <div className="space-y-4">
+                  {horseStats.map((horse, i) => (
+                    <div key={horse.name} className="flex items-center gap-4">
+                      <span className="text-editorial-text-muted text-xs w-24 shrink-0 truncate">
+                        {horse.name}
+                      </span>
+                      <StatBar
+                        value={horse[stat.key]}
+                        delay={0.1 + i * 0.08}
+                      />
+                      <span className="text-editorial-accent text-xs font-medium w-8 text-right">
+                        {horse[stat.key]}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

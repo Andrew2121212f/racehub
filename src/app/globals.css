@@ -137,6 +137,50 @@ html {
 }
 
 /* ============================================
+   КАСТОМНЫЙ СКРОЛЛБАР
+   ============================================ */
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--editorial-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--editorial-accent);
+  border-radius: 4px;
+  border: 2px solid var(--editorial-bg-alt);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--editorial-accent-light);
+  border-color: transparent;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--editorial-accent) var(--editorial-bg-alt);
+}
+
+/* Dark page */
+.dark-page::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+.dark-page::-webkit-scrollbar-thumb {
+  background: var(--dark-gold-dim);
+  border-color: var(--dark-bg);
+}
+
+.dark-page::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-gold);
+}
+
+/* ============================================
    АНИМАЦИИ
    ============================================ */
 @keyframes fade-up {

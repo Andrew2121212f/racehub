@@ -1,6 +1,67 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+// Параметры эллипса трека
+const CX = 400;
+const CY = 200;
+const RX = 340;
+const RY = 150;
+
+// Компонент бегущей точки по эллипсу
+function RunningDot() {
+  const angle = useMotionValue(0);
+  // Старт справа (0 рад) — от финишной линии, движение по часовой стрелке
+  const cx = useTransform(angle, (a) => CX + RX * Math.cos(a));
+  const cy = useTransform(angle, (a) => CY + RY * Math.sin(a));
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef<SVGCircleElement>(null);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(angle, Math.PI * 2, {
+      duration: 4,
+      ease: "easeInOut",
+      delay: 0.5,
+      repeat: Infinity,
+      repeatDelay: 1,
+    });
+
+    return () => controls.stop();
+  }, [isInView, angle]);
+
+  // Наблюдатель для запуска анимации при скролле
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <motion.circle
+      ref={ref}
+      r="8"
+      fill="var(--editorial-accent)"
+      cx={cx}
+      cy={cy}
+      style={{ filter: "drop-shadow(0 0 6px var(--editorial-accent))" }}
+    />
+  );
+}
 
 // Анимированная SVG-схема ипподрома
 export default function TrackDiagram() {
@@ -33,10 +94,10 @@ export default function TrackDiagram() {
           <svg viewBox="0 0 800 400" className="w-full" fill="none">
             {/* Трасса — овал */}
             <motion.ellipse
-              cx="400"
-              cy="200"
-              rx="340"
-              ry="150"
+              cx={CX}
+              cy={CY}
+              rx={RX}
+              ry={RY}
               stroke="var(--editorial-border)"
               strokeWidth="40"
               initial={{ pathLength: 0 }}
@@ -47,8 +108,8 @@ export default function TrackDiagram() {
 
             {/* Внутренняя линия */}
             <ellipse
-              cx="400"
-              cy="200"
+              cx={CX}
+              cy={CY}
               rx="300"
               ry="110"
               stroke="var(--editorial-border)"
@@ -71,18 +132,8 @@ export default function TrackDiagram() {
               transition={{ duration: 0.5, delay: 2 }}
             />
 
-            {/* Бегущая лошадь — точка */}
-            <motion.circle
-              r="8"
-              fill="var(--editorial-accent)"
-              initial={{ offsetDistance: "0%" }}
-              whileInView={{ offsetDistance: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 4, ease: "easeInOut", delay: 0.5, repeat: Infinity }}
-              style={{
-                offsetPath: "path('M 740 200 A 340 150 0 1 0 739 200')",
-              }}
-            />
+            {/* Бегущая лошадь — точка по эллипсу */}
+            <RunningDot />
           </svg>
 
           {/* Метки */}
@@ -125,7 +176,8 @@ export default function TrackDiagram() {
         </motion.div>
 
         <p className="text-center text-editorial-text-muted text-sm mt-12 max-w-lg mx-auto italic">
-          Большинство ипподромов имеют овальную форму. Решающий рывок происходит на финишной прямой — последних 200-400 метрах.
+          Большинство ипподромов имеют овальную форму. Решающий рывок происходит
+          на финишной прямой — последних 200-400 метрах.
         </p>
       </div>
     </section>

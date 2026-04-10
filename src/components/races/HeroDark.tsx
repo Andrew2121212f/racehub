@@ -16,9 +16,9 @@ export default function HeroDark() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={heroVideos.races} type="video/mp4" />
+          <source src="/funfacts-bg.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/80 via-dark-bg/60 to-dark-bg" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/90 via-dark-bg/70 to-dark-bg" />
       </div>
 
       <div className="relative z-10 text-center px-8 md:px-16 max-w-5xl mx-auto">
