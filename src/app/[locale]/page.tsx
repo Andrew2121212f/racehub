@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-// Главная страница — редирект на лендинг для новичков
+// Главная страница — редирект на про-лендинг скачек
 export default function Home() {
-  redirect("/beginners");
+  redirect("/races");
 }
