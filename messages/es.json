@@ -1,0 +1,379 @@
+{
+  "nav": {
+    "beginners": "Para principiantes",
+    "races": "Carreras 2026",
+    "what": "Qué son",
+    "track": "Pista",
+    "distances": "Distancias",
+    "facts": "Cifras",
+    "calculator": "Calculadora",
+    "stars": "Estrellas",
+    "favorites": "Favoritos",
+    "grandNational": "Grand National",
+    "timeline": "Cronología",
+    "analytics": "Análisis",
+    "map": "Mapa",
+    "contenders": "Contendientes",
+    "events": "Eventos"
+  },
+  "hero": {
+    "label": "Guía para principiantes",
+    "title1": "Carreras",
+    "titleFor": "para",
+    "title2": "principiantes",
+    "subtitle": "Las carreras de caballos pueden parecer complicadas, pero en realidad son bastante simples: varios caballos arrancan al mismo tiempo y gana el que cruza primero la meta."
+  },
+  "whatAreRaces": {
+    "title": "Qué son las carreras",
+    "p1": "En la mayoría de las carreras participan entre 8 y 12 caballos. Todos arrancan al mismo tiempo desde las puertas de salida y corren por la misma pista.",
+    "quote": "Gana el caballo que cruza primero la línea de meta. Una carrera dura de 1 a 3 minutos — el resultado se conoce al instante.",
+    "gates": "Puertas de salida",
+    "gatesDesc": "Todos los caballos arrancan al mismo tiempo",
+    "circuit": "Pista ovalada",
+    "circuitDesc": "Circuito ovalado del hipódromo",
+    "turn": "Curva",
+    "turnDesc": "Aquí se decide la posición",
+    "finish": "Recta final",
+    "finishDesc": "Los últimos 200-400 metros"
+  },
+  "trackDiagram": {
+    "label": "Cómo funciona la pista",
+    "title": "Anatomía del hipódromo",
+    "startFinish": "Salida / Meta",
+    "turn1": "1.ª curva",
+    "backStraight": "Recta opuesta",
+    "turn2": "2.ª curva",
+    "homeStraight": "Recta final →",
+    "description": "La mayoría de los hipódromos tienen forma ovalada. El sprint decisivo ocurre en la recta final — los últimos 200-400 metros."
+  },
+  "distances": {
+    "label": "Tipos de carreras",
+    "title": "Tres distancias principales",
+    "sprintTitle": "Sprint",
+    "sprintMeters": "~1200 m",
+    "sprintTime": "~1 minuto",
+    "sprintDesc": "Son las carreras más rápidas. Los caballos alcanzan la velocidad máxima de inmediato y la carrera termina en aproximadamente un minuto. Estos eventos son los favoritos del público por su dinamismo.",
+    "middleTitle": "Media distancia",
+    "middleMeters": "1600–2000 m",
+    "middleTime": "~2 minutos",
+    "middleDesc": "El tipo de carrera más popular. Aquí importan no solo la velocidad, sino también la correcta distribución de fuerzas. Muchos torneos famosos se disputan en estas distancias.",
+    "longTitle": "Larga distancia",
+    "longMeters": "2400+ m",
+    "longTime": "~3 minutos",
+    "longDesc": "Es una verdadera prueba de resistencia. El jockey debe administrar bien las fuerzas del caballo para que pueda acelerar en la recta final."
+  },
+  "funFacts": {
+    "label": "Datos curiosos",
+    "title": "Las carreras en cifras",
+    "speedLabel": "Velocidad máxima",
+    "speedUnit": "km/h",
+    "speedDesc": "Velocidad promedio de un caballo de carreras en sprint. Es más rápido que el límite de velocidad en la ciudad.",
+    "weightLabel": "Peso del caballo",
+    "weightUnit": "kg",
+    "weightDesc": "Peso promedio de un caballo pura sangre de carreras. El jockey pesa solo 50-55 kg.",
+    "historyLabel": "Historia de las carreras",
+    "historyUnit": "años",
+    "historyDesc": "Las carreras como deporte organizado existen desde el siglo XVIII. El primer Derby se celebró en 1780.",
+    "prizeLabel": "Récord de premios",
+    "prizeDesc": "La Saudi Cup es la carrera más cara del mundo, con un premio de $35 millones."
+  },
+  "calculator": {
+    "label": "Pruébalo tú mismo",
+    "title": "Calculadora",
+    "titleItalic": "de apuestas",
+    "description": "Mueve los controles para ver cómo cambia la ganancia potencial según el monto de la apuesta y la cuota.",
+    "betAmount": "Monto de la apuesta",
+    "odds": "Cuota",
+    "favorite": "Favorito",
+    "medium": "Intermedio",
+    "outsider": "Outsider",
+    "darkHorse": "Caballo oscuro",
+    "winnings": "Ganancia",
+    "netProfit": "Beneficio neto"
+  },
+  "starsSection": {
+    "label": "Más sobre los favoritos",
+    "title": "Estrellas de las carreras 2026",
+    "subtitle": "Conoce más sobre cada caballo — su estilo, historia y por qué merece tu atención.",
+    "betButton": "Apostar"
+  },
+  "comparison": {
+    "label": "Comparación",
+    "title": "¿Quién es tu favorito?",
+    "subtitle": "Compara los indicadores clave de las cinco estrellas de la temporada para tomar una decisión informada.",
+    "horse": "Caballo",
+    "wins": "Victorias",
+    "winRate": "Win %",
+    "distance": "Distancia",
+    "odds": "Cuota",
+    "style": "Estilo",
+    "form": "Forma",
+    "visualComparison": "Comparación visual",
+    "speed": "Velocidad",
+    "endurance": "Resistencia",
+    "consistency": "Consistencia",
+    "distLong": "Larga",
+    "distSprint": "Sprint",
+    "distMiddle": "Media",
+    "styleStable": "Estable",
+    "styleAggressive": "Agresivo",
+    "styleReliable": "Fiable",
+    "styleClassic": "Clásico",
+    "styleVeteran": "Veterano"
+  },
+  "steps": {
+    "label": "Cómo empezar",
+    "title": "Tres pasos sencillos",
+    "step1Title": "Elige una carrera",
+    "step1Desc": "Abre el calendario y elige la carrera que te interese. Fíjate en la hora de salida y la lista de participantes.",
+    "step2Title": "Estudia a los participantes",
+    "step2Desc": "Revisa la lista de caballos, sus cuotas y las estadísticas de sus últimas actuaciones. Esto te ayudará a tomar una decisión informada.",
+    "step3Title": "Haz tu apuesta",
+    "step3Desc": "Elige un caballo e indica el monto. Tras la confirmación, la apuesta queda fijada y solo queda esperar el inicio de la carrera."
+  },
+  "photoDivider": {
+    "hippodrome": "El hipódromo moderno — un escenario para cientos de miles de espectadores",
+    "emotion": "Cada carrera es una tormenta de emociones y estrategia",
+    "journey": "¿Listo para comenzar tu viaje en el mundo de las carreras?"
+  },
+  "footer": {
+    "description": "Todo sobre las carreras: desde lo básico hasta los grandes eventos de la temporada",
+    "sections": "Secciones",
+    "landings": "Landings",
+    "beginnersLink": "Carreras para principiantes",
+    "racesLink": "Carreras 2026",
+    "copyright": "© 2026 RaceHub. Recurso informativo. Todos los datos son de carácter orientativo."
+  },
+  "heroDark": {
+    "label": "Temporada 2026",
+    "title1": "Las carreras — un deporte",
+    "title2": "que se siente",
+    "title3": "con el corazón",
+    "subtitle": "No es solo una carrera. Es el momento en que todo lo deciden los segundos, la intuición y el carácter — caballo y jinete."
+  },
+  "seasonIntro": {
+    "p1": "Las carreras existen desde hace siglos, pero siguen provocando las mismas emociones: tensión, emoción y ese «efecto wow» en la meta.",
+    "p2": "Los mejores caballos entrenan durante años para mostrar la combinación perfecta de velocidad, resistencia y táctica. Millones de aficionados siguen sus actuaciones.",
+    "readyTitle": "¿Listo para probar?",
+    "readyLine1": "Elige a tu favorito.",
+    "readyLine2": "Siente el momento de la salida.",
+    "readyLine3": "Y atrapa esa emoción.",
+    "viewEvents": "Ver eventos"
+  },
+  "countdown": {
+    "label": "Próximo evento",
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "started": "El evento ha comenzado",
+    "details": "Más detalles",
+    "grandNationalLocation": "Aintree, Liverpool",
+    "kentuckyDerbyLocation": "Churchill Downs, Louisville",
+    "preaknessLocation": "Pimlico, Baltimore",
+    "arcLocation": "ParisLongchamp, París",
+    "breedersCupLocation": "Keeneland, Lexington"
+  },
+  "grandNationalPreview": {
+    "label": "Próximo evento · 11 de abril de 2026",
+    "title": "Grand National Festival",
+    "subtitle": "Aintree, Liverpool · 16:00 BST · Willie Mullins presenta 9 caballos (26% del campo). I Am Maximus intenta convertirse en el primer caballo con tres victorias consecutivas.",
+    "favoritesLabel": "Top favoritos · cuotas",
+    "note2xChamp": "2x campeón",
+    "note2nd2025": "2.º puesto 2025",
+    "note4th2025": "4.º puesto 2025",
+    "keyFacts": "Datos clave",
+    "participants": "Participantes",
+    "fences": "Vallas",
+    "kmDistance": "km distancia",
+    "prizeFund": "Fondo de premios",
+    "insightLabel": "Dato:",
+    "insight": "23 de los 34 participantes entrenan en Irlanda. El favorito gana el Grand National solo en el 17% de los casos — es una de las carreras más impredecibles del mundo."
+  },
+  "stats": {
+    "mainEvents": "Eventos\nprincipales",
+    "continents": "Continentes",
+    "prizeDollars": "Dólares\nen premios",
+    "horsesOnStart": "Caballos\nen la salida"
+  },
+  "seasonTimeline": {
+    "label": "Calendario",
+    "title": "Temporada 2026",
+    "grandNational": {
+      "month": "ABR",
+      "location": "Liverpool, Inglaterra",
+      "date": "11 de abril",
+      "description": "La carrera de obstáculos más famosa del mundo. 4 millas, 30 vallas."
+    },
+    "kentuckyDerby": {
+      "month": "MAY",
+      "location": "Louisville, EE.UU.",
+      "date": "2 de mayo",
+      "description": "«Los dos minutos más rápidos del deporte». Carrera de tres años en 2 km."
+    },
+    "preakness": {
+      "month": "MAY",
+      "location": "Baltimore, EE.UU.",
+      "date": "16 de mayo",
+      "description": "Segunda etapa de la Triple Corona. La estrategia lo decide todo."
+    },
+    "arc": {
+      "month": "OCT",
+      "location": "París, Francia",
+      "date": "4 de octubre",
+      "description": "La gran carrera de Europa. Los mejores del mundo en Longchamp."
+    },
+    "breedersCup": {
+      "month": "OCT",
+      "location": "Del Mar, EE.UU.",
+      "date": "30-31 de octubre",
+      "description": "El broche final de la temporada — el campeonato mundial de las carreras."
+    }
+  },
+  "historicalStats": {
+    "label": "Análisis",
+    "title": "Patrones del Grand National",
+    "subtitle": "71 años de estadísticas — qué realmente influye en el resultado",
+    "favoritesRare": "Los favoritos ganan rara vez",
+    "favoritesText": "El favorito ganó 12 de las 71 carreras de posguerra. En 37 casos, el favorito ni siquiera terminó.",
+    "favoritesOf": "favoritos",
+    "recentWinners": "Últimos ganadores",
+    "winnerProfile": "Perfil ideal del ganador",
+    "weightVsWins": "Peso vs. Victorias",
+    "age": "Edad 8–11 años",
+    "ageDetail": "89% de los ganadores",
+    "weightUnder": "Peso menor a 11 stones",
+    "weightDetail": "7 de los últimos 9",
+    "irishTrainer": "Entrenador irlandés",
+    "irishDetail": "23 de 34 en 2026",
+    "experience": "Experiencia en 30 vallas",
+    "experienceDetail": "Imprescindible",
+    "goodForm": "Buena forma",
+    "formDetail": "Solo el 17% de los favoritos",
+    "weightUnder10": "Menos de 10 stones",
+    "weight10to11": "10–11 stones",
+    "weightOver11": "Más de 11 stones",
+    "lightHorses": "Los caballos más ligeros estadísticamente ganan con más frecuencia. De 1989 a 2004, ningún caballo con más de 11 stones ganó."
+  },
+  "derbyContenders": {
+    "label": "Kentucky Derby 2026 · 2 de mayo",
+    "title": "Principales contendientes",
+    "subtitle": "Los cuatro líderes según los resultados de las carreras preparatorias G1",
+    "formStat": "Forma",
+    "speedStat": "Velocidad",
+    "classStat": "Clase",
+    "prepRaces": "Resultados de carreras preparatorias",
+    "race": "Carrera",
+    "winner": "Ganador",
+    "date": "Fecha",
+    "margin": "Ventaja",
+    "commandmentResult": "1.er puesto",
+    "commandmentStreak": "4 victorias consecutivas",
+    "renegadeResult": "1.er puesto",
+    "renegadeStreak": "Principal favorito de las casas de apuestas",
+    "furtherAdoResult": "1.º (+11 cuerpos)",
+    "furtherAdoStreak": "Victoria aplastante en Blue Grass",
+    "soHappyResult": "1.er puesto",
+    "soHappyStreak": "Sorpresa de la temporada a 8/1",
+    "prepFloridaDate": "29 mar",
+    "prepFloridaMargin": "con autoridad",
+    "prepBlueGrassDate": "5 abr",
+    "prepBlueGrassMargin": "+11 cuerpos",
+    "prepSantaAnitaDate": "5 abr",
+    "prepSantaAnitaMargin": "+2¾ cuerpos",
+    "prepArkansasDate": "5 abr",
+    "prepArkansasMargin": "de forma convincente"
+  },
+  "worldMap": {
+    "label": "Geografía",
+    "title": "Carreras por todo el mundo",
+    "prizes": "Premios",
+    "distanceLabel": "Distancia",
+    "horsesLabel": "Caballos",
+    "grandNationalCity": "Liverpool, Inglaterra",
+    "grandNationalDate": "Abril 2026",
+    "grandNationalDistance": "7,2 km",
+    "kentuckyDerbyCity": "Louisville, EE.UU.",
+    "kentuckyDerbyDate": "Mayo 2026",
+    "kentuckyDerbyDistance": "2 km",
+    "preaknessCity": "Baltimore, EE.UU.",
+    "preaknessDate": "Mayo 2026",
+    "preaknessDistance": "1,9 km",
+    "arcCity": "París, Francia",
+    "arcDate": "Octubre 2026",
+    "arcDistance": "2,4 km",
+    "breedersCupCity": "Del Mar, EE.UU.",
+    "breedersCupDate": "Octubre 2026",
+    "breedersCupDistance": "Varias"
+  },
+  "raceEvents": {
+    "calendarLabel": "Calendario",
+    "title": "Grandes carreras 2026",
+    "subtitle": "Aquí arrancan los favoritos, nacen nuevas estrellas y se rompen todos los pronósticos.",
+    "betButton": "Apostar"
+  },
+  "photoDividerDark": {
+    "five": "Cinco grandes eventos de la temporada en tres continentes",
+    "history": "Cada carrera es una historia que se escribe a toda velocidad"
+  },
+  "horses": {
+    "iroko": {
+      "country": "Francia",
+      "description": "Iroko es un típico «asesino silencioso» en la distancia: no llama la atención, pero termina consistentemente entre los líderes.",
+      "why": "Es la elección para quienes quieren minimizar el riesgo y apostar por la consistencia. Su peso ligero y un jockey experimentado lo hacen especialmente peligroso en la larga distancia."
+    },
+    "commandment": {
+      "country": "EE.UU.",
+      "description": "Commandment es velocidad explosiva y presión desde los primeros segundos. Su victoria en las Risen Star Stakes lo convirtió en uno de los jóvenes contendientes más comentados.",
+      "why": "Ideal para quienes buscan adrenalina: apostar por él siempre es «todo o nada». Con un jockey fuerte, puede imponer un ritmo que simplemente «rompa» la carrera."
+    },
+    "barnes": {
+      "country": "EE.UU.",
+      "description": "Barnes es sinónimo de fiabilidad: tras el Kentucky Derby demostró que sabe mantener la forma y no perderse bajo la presión de los mejores rivales.",
+      "why": "Es la «elección inteligente» ideal — no el más mediático, pero a menudo el más rentable. En manos de uno de los mejores jockeys de EE.UU. se vuelve aún más peligroso."
+    },
+    "minnieHauk": {
+      "country": "Francia",
+      "description": "Minnie Hauk es la personificación de la clase y el linaje. Ya la llaman la futura estrella a nivel del Prix de l'Arc de Triomphe.",
+      "why": "Apostar por ella es elegir el talento evidente. Un jockey experimentado de talla mundial refuerza la sensación de que todo está «bajo control»."
+    },
+    "senorBuscador": {
+      "country": "EE.UU.",
+      "description": "Senor Buscador es un veterano con carácter que ha vuelto a la lucha más de una vez cuando ya lo daban por acabado. Su experiencia a nivel G1 lo hace peligroso contra cualquier campo.",
+      "why": "Es una historia de regreso por la que da gusto apostar. Con su jockey, es capaz de exprimir el máximo incluso en las carreras más difíciles."
+    }
+  },
+  "raceEventsData": {
+    "grandNational": {
+      "date": "Abril 2026",
+      "month": "ABR",
+      "description": "El Grand National es una prueba de supervivencia donde los favoritos a menudo ceden ante quienes simplemente resisten la distancia. Cada segundo está cargado de tensión, y la meta es casi siempre una historia contra todo pronóstico."
+    },
+    "kentuckyDerby": {
+      "date": "Mayo 2026",
+      "month": "MAY",
+      "description": "El Kentucky Derby es el momento en que nacen las estrellas. Caballos jóvenes salen a la pista con la oportunidad de entrar en la historia."
+    },
+    "preakness": {
+      "date": "Mayo 2026",
+      "month": "MAY",
+      "description": "Después del Derby, aquí se decide si el campeón tiene verdadera solidez. El Preakness es la carrera donde la estrategia pasa a primer plano y los errores cuestan muy caro."
+    },
+    "arc": {
+      "date": "Octubre 2026",
+      "month": "OCT",
+      "description": "El Arc es la gran carrera de Europa, donde se enfrentan los mejores entre los mejores."
+    },
+    "breedersCup": {
+      "date": "Octubre 2026",
+      "month": "OCT",
+      "description": "La Breeders' Cup es el broche final de la temporada, prácticamente un «campeonato mundial» que reúne a los mejores de todos los continentes."
+    }
+  },
+  "metadata": {
+    "beginnersTitle": "Carreras para principiantes",
+    "beginnersDescription": "Guía completa de carreras: cómo funcionan, distancias, calculadora de apuestas y estrellas de la temporada 2026.",
+    "racesTitle": "Carreras 2026 — Grandes eventos de la temporada",
+    "racesDescription": "Grand National, Kentucky Derby, Prix de l'Arc de Triomphe, Breeders' Cup. Análisis, cuotas, datos reales."
+  }
+}

@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { heroVideos } from "@/lib/data";
 
 // Кинематографичный hero — видео + тёмная тема + золото
 export default function HeroDark() {
+  const t = useTranslations("heroDark");
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Видео-фон */}
@@ -36,7 +38,7 @@ export default function HeroDark() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-dark-gold text-xs tracking-[0.5em] uppercase mb-12"
         >
-          Сезон 2026
+          {t("label")}
         </motion.p>
 
         <motion.h1
@@ -45,11 +47,11 @@ export default function HeroDark() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl lg:text-9xl text-dark-text leading-[0.9] mb-12"
         >
-          Скачки — спорт,
+          {t("title1")}
           <br />
-          <span className="italic text-dark-gold">который чувствуешь</span>
+          <span className="italic text-dark-gold">{t("title2")}</span>
           <br />
-          сердцем
+          {t("title3")}
         </motion.h1>
 
         <motion.p
@@ -58,7 +60,7 @@ export default function HeroDark() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-dark-text-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
-          Это не просто гонка. Это момент, когда всё решают секунды, интуиция и характер — лошадь и человек.
+          {t("subtitle")}
         </motion.p>
 
         <motion.div

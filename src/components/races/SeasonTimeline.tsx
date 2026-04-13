@@ -2,57 +2,60 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-const events = [
-  {
-    month: "АПР",
-    name: "Grand National",
-    location: "Ливерпуль, Англия",
-    date: "11 апреля",
-    description: "Самая известная стипль-чез гонка в мире. 4 мили, 30 барьеров.",
-    active: true,
-    image: "/races/grand-national.jpg",
-  },
-  {
-    month: "МАЙ",
-    name: "Kentucky Derby",
-    location: "Луисвилл, США",
-    date: "2 мая",
-    description: "«Самые быстрые две минуты в спорте». Гонка трёхлеток на 2 км.",
-    active: false,
-    image: "/races/kentucky-derby.jpg",
-  },
-  {
-    month: "МАЙ",
-    name: "Preakness Stakes",
-    location: "Балтимор, США",
-    date: "16 мая",
-    description: "Второй этап Тройной Короны. Стратегия решает всё.",
-    active: false,
-    image: "/races/preakness.jpg",
-  },
-  {
-    month: "ОКТ",
-    name: "Prix de l'Arc",
-    location: "Париж, Франция",
-    date: "4 октября",
-    description: "Главная гонка Европы. Лучшие со всего мира на Лоншане.",
-    active: false,
-    image: "/races/prix-arc.jpg",
-  },
-  {
-    month: "ОКТ",
-    name: "Breeders' Cup",
-    location: "Дель Мар, США",
-    date: "30-31 октября",
-    description: "Финальный аккорд сезона — чемпионат мира скачек.",
-    active: false,
-    image: "/races/breeders-cup.jpg",
-  },
-];
+import { useTranslations } from "next-intl";
 
 // Вертикальный таймлайн с фото, проявляющимися при скролле
 export default function SeasonTimeline() {
+  const t = useTranslations("seasonTimeline");
+
+  const events = [
+    {
+      name: "Grand National",
+      month: t("grandNational.month"),
+      location: t("grandNational.location"),
+      date: t("grandNational.date"),
+      description: t("grandNational.description"),
+      active: true,
+      image: "/races/grand-national.jpg",
+    },
+    {
+      name: "Kentucky Derby",
+      month: t("kentuckyDerby.month"),
+      location: t("kentuckyDerby.location"),
+      date: t("kentuckyDerby.date"),
+      description: t("kentuckyDerby.description"),
+      active: false,
+      image: "/races/kentucky-derby.jpg",
+    },
+    {
+      name: "Preakness Stakes",
+      month: t("preakness.month"),
+      location: t("preakness.location"),
+      date: t("preakness.date"),
+      description: t("preakness.description"),
+      active: false,
+      image: "/races/preakness.jpg",
+    },
+    {
+      name: "Prix de l'Arc",
+      month: t("arc.month"),
+      location: t("arc.location"),
+      date: t("arc.date"),
+      description: t("arc.description"),
+      active: false,
+      image: "/races/prix-arc.jpg",
+    },
+    {
+      name: "Breeders' Cup",
+      month: t("breedersCup.month"),
+      location: t("breedersCup.location"),
+      date: t("breedersCup.date"),
+      description: t("breedersCup.description"),
+      active: false,
+      image: "/races/breeders-cup.jpg",
+    },
+  ];
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -72,10 +75,10 @@ export default function SeasonTimeline() {
           className="text-center mb-24"
         >
           <p className="text-dark-gold text-xs tracking-[0.5em] uppercase mb-8">
-            Расписание
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-dark-text leading-tight">
-            Сезон 2026
+            {t("title")}
           </h2>
         </motion.div>
 

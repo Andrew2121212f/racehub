@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // Секция "Что такое скачки" — editorial, много воздуха, pull-quote
 export default function WhatAreRaces() {
+  const t = useTranslations("whatAreRaces");
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto">
@@ -19,14 +21,14 @@ export default function WhatAreRaces() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-editorial-text mb-10 leading-tight">
-              Что такое скачки
+              {t("title")}
             </h2>
 
             <div className="editorial-divider mb-10" />
 
             <div className="space-y-8 text-editorial-text-muted text-lg md:text-xl leading-relaxed">
               <p>
-                В большинстве гонок участвуют 8–12 лошадей. Все они стартуют одновременно из специальных ворот и бегут по одной трассе.
+                {t("p1")}
               </p>
             </div>
           </motion.div>
@@ -48,8 +50,7 @@ export default function WhatAreRaces() {
             <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
           </svg>
           <p className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl text-editorial-text leading-snug">
-            Побеждает тот скакун, который первым пересекает финишную линию.
-            Один заезд длится от 1 до 3 минут — результат становится известен мгновенно.
+            {t("quote")}
           </p>
         </motion.blockquote>
 
@@ -62,10 +63,10 @@ export default function WhatAreRaces() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {[
-            { label: "Стартовые ворота", num: "01", desc: "Все лошади стартуют одновременно" },
-            { label: "Круговая трасса", num: "02", desc: "Овальная трасса на ипподроме" },
-            { label: "Поворот", num: "03", desc: "Здесь решается позиция" },
-            { label: "Финишная прямая", num: "04", desc: "Последние 200-400 метров" },
+            { label: t("gates"), num: "01", desc: t("gatesDesc") },
+            { label: t("circuit"), num: "02", desc: t("circuitDesc") },
+            { label: t("turn"), num: "03", desc: t("turnDesc") },
+            { label: t("finish"), num: "04", desc: t("finishDesc") },
           ].map((item) => (
             <div key={item.num} className="group">
               <span className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl text-editorial-border group-hover:text-editorial-accent transition-colors duration-300">

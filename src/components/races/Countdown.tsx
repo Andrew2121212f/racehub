@@ -2,20 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-// Все события сезона — автоматически переключается на следующее
-const EVENTS = [
-  { name: "Grand National Festival", location: "Aintree, Ливерпуль", date: new Date("2026-04-11T15:00:00+01:00"), id: "grand-national" },
-  { name: "Kentucky Derby", location: "Churchill Downs, Луисвилл", date: new Date("2026-05-02T18:57:00-04:00"), id: "kentucky-derby" },
-  { name: "Preakness Stakes", location: "Pimlico, Балтимор", date: new Date("2026-05-16T18:45:00-04:00"), id: "preakness" },
-  { name: "Prix de l'Arc de Triomphe", location: "ParisLongchamp, Париж", date: new Date("2026-10-04T16:05:00+02:00"), id: "arc" },
-  { name: "Breeders' Cup Classic", location: "Keeneland, Лексингтон", date: new Date("2026-10-31T17:40:00-04:00"), id: "breeders-cup" },
-];
-
-function getNextEvent() {
-  const now = new Date();
-  return EVENTS.find((e) => e.date.getTime() > now.getTime()) || EVENTS[EVENTS.length - 1];
-}
+import { useTranslations } from "next-intl";
 
 function getTimeLeft(target: Date) {
   const diff = target.getTime() - Date.now();
@@ -31,6 +18,22 @@ function getTimeLeft(target: Date) {
 
 // Обратный отсчёт до ближайшего события
 export default function Countdown() {
+  const t = useTranslations("countdown");
+
+  // Все события сезона — автоматически переключается на следующее
+  const EVENTS = [
+    { name: "Grand National Festival", location: t("grandNationalLocation"), date: new Date("2026-04-11T15:00:00+01:00"), id: "grand-national" },
+    { name: "Kentucky Derby", location: t("kentuckyDerbyLocation"), date: new Date("2026-05-02T18:57:00-04:00"), id: "kentucky-derby" },
+    { name: "Preakness Stakes", location: t("preaknessLocation"), date: new Date("2026-05-16T18:45:00-04:00"), id: "preakness" },
+    { name: "Prix de l'Arc de Triomphe", location: t("arcLocation"), date: new Date("2026-10-04T16:05:00+02:00"), id: "arc" },
+    { name: "Breeders' Cup Classic", location: t("breedersCupLocation"), date: new Date("2026-10-31T17:40:00-04:00"), id: "breeders-cup" },
+  ];
+
+  function getNextEvent() {
+    const now = new Date();
+    return EVENTS.find((e) => e.date.getTime() > now.getTime()) || EVENTS[EVENTS.length - 1];
+  }
+
   const [event, setEvent] = useState(getNextEvent);
   const [time, setTime] = useState(() => getTimeLeft(event.date));
 
@@ -41,13 +44,14 @@ export default function Countdown() {
       setTime(getTimeLeft(nextEvent.date));
     }, 1000);
     return () => clearInterval(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [event.id]);
 
   const blocks = [
-    { value: time.days, label: "Дней" },
-    { value: time.hours, label: "Часов" },
-    { value: time.minutes, label: "Минут" },
-    { value: time.seconds, label: "Секунд" },
+    { value: time.days, label: t("days") },
+    { value: time.hours, label: t("hours") },
+    { value: time.minutes, label: t("minutes") },
+    { value: time.seconds, label: t("seconds") },
   ];
 
   return (
@@ -60,7 +64,7 @@ export default function Countdown() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-dark-gold text-xs tracking-[0.5em] uppercase mb-8">
-            Ближайшее событие
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-dark-text leading-tight mb-4">
             {event.name}
@@ -76,7 +80,7 @@ export default function Countdown() {
             animate={{ opacity: 1 }}
             className="font-[family-name:var(--font-playfair)] text-3xl text-dark-gold"
           >
-            Событие началось
+            {t("started")}
           </motion.p>
         ) : (
           <motion.div
@@ -112,7 +116,7 @@ export default function Countdown() {
           transition={{ delay: 0.5 }}
           className="gold-shimmer inline-block text-black px-10 py-4 text-sm tracking-[0.2em] uppercase font-medium mt-16"
         >
-          Подробнее
+          {t("details")}
         </motion.a>
       </div>
     </section>

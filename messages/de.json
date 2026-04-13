@@ -1,0 +1,379 @@
+{
+  "nav": {
+    "beginners": "Für Einsteiger",
+    "races": "Rennen 2026",
+    "what": "Was ist",
+    "track": "Rennbahn",
+    "distances": "Distanzen",
+    "facts": "Zahlen",
+    "calculator": "Rechner",
+    "stars": "Stars",
+    "favorites": "Favoriten",
+    "grandNational": "Grand National",
+    "timeline": "Zeitplan",
+    "analytics": "Analytik",
+    "map": "Karte",
+    "contenders": "Anwärter",
+    "events": "Events"
+  },
+  "hero": {
+    "label": "Leitfaden für Einsteiger",
+    "title1": "Pferderennen",
+    "titleFor": "für",
+    "title2": "Einsteiger",
+    "subtitle": "Pferderennen mögen kompliziert wirken, aber eigentlich ist es ganz einfach: Mehrere Pferde starten gleichzeitig, und das Pferd, das als erstes die Ziellinie überquert, gewinnt."
+  },
+  "whatAreRaces": {
+    "title": "Was sind Pferderennen",
+    "p1": "An den meisten Rennen nehmen 8–12 Pferde teil. Sie starten gleichzeitig aus speziellen Startboxen und laufen auf derselben Bahn.",
+    "quote": "Es gewinnt das Pferd, das als erstes die Ziellinie überquert. Ein Rennen dauert 1 bis 3 Minuten — das Ergebnis steht sofort fest.",
+    "gates": "Startboxen",
+    "gatesDesc": "Alle Pferde starten gleichzeitig",
+    "circuit": "Rundkurs",
+    "circuitDesc": "Ovale Bahn auf der Rennstrecke",
+    "turn": "Kurve",
+    "turnDesc": "Hier entscheidet sich die Position",
+    "finish": "Zielgerade",
+    "finishDesc": "Die letzten 200–400 Meter"
+  },
+  "trackDiagram": {
+    "label": "Aufbau der Rennbahn",
+    "title": "Anatomie einer Rennbahn",
+    "startFinish": "Start / Ziel",
+    "turn1": "1. Kurve",
+    "backStraight": "Gegengerade",
+    "turn2": "2. Kurve",
+    "homeStraight": "Zielgerade →",
+    "description": "Die meisten Rennbahnen haben eine ovale Form. Der entscheidende Spurt findet auf der Zielgeraden statt — den letzten 200–400 Metern."
+  },
+  "distances": {
+    "label": "Renntypen",
+    "title": "Drei Hauptdistanzen",
+    "sprintTitle": "Sprint",
+    "sprintMeters": "~1200 m",
+    "sprintTime": "~1 Minute",
+    "sprintDesc": "Das sind die schnellsten Rennen. Die Pferde erreichen sofort Höchstgeschwindigkeit, und das Rennen ist in etwa einer Minute vorbei. Zuschauer lieben diese Rennen wegen ihrer Dynamik.",
+    "middleTitle": "Mitteldistanz",
+    "middleMeters": "1600–2000 m",
+    "middleTime": "~2 Minuten",
+    "middleDesc": "Der beliebteste Renntyp. Hier zählen nicht nur Geschwindigkeit, sondern auch die richtige Kräfteeinteilung. Viele berühmte Turniere finden auf dieser Distanz statt.",
+    "longTitle": "Langstrecke",
+    "longMeters": "2400+ m",
+    "longTime": "~3 Minuten",
+    "longDesc": "Ein echter Ausdauertest. Der Jockey muss die Kräfte des Pferdes klug einteilen, damit es im Finish noch beschleunigen kann."
+  },
+  "funFacts": {
+    "label": "Interessante Fakten",
+    "title": "Pferderennen in Zahlen",
+    "speedLabel": "Höchstgeschwindigkeit",
+    "speedUnit": "km/h",
+    "speedDesc": "Durchschnittliche Geschwindigkeit eines Rennpferdes im Sprint. Das ist schneller als die erlaubte Geschwindigkeit in der Stadt.",
+    "weightLabel": "Gewicht des Rennpferdes",
+    "weightUnit": "kg",
+    "weightDesc": "Durchschnittliches Gewicht eines Vollblut-Rennpferdes. Dabei wiegt der Jockey nur 50–55 kg.",
+    "historyLabel": "Geschichte der Rennen",
+    "historyUnit": "Jahre",
+    "historyDesc": "Pferderennen als organisierter Sport existieren seit dem 18. Jahrhundert. Das erste Derby fand 1780 statt.",
+    "prizeLabel": "Preisrekord",
+    "prizeDesc": "Der Saudi Cup ist das teuerste Rennen der Welt mit einem Preisgeld von 35 Millionen Dollar."
+  },
+  "calculator": {
+    "label": "Probieren Sie es selbst",
+    "title": "Wett-",
+    "titleItalic": "rechner",
+    "description": "Bewegen Sie die Regler, um zu sehen, wie sich der potenzielle Gewinn je nach Einsatz und Quote verändert.",
+    "betAmount": "Einsatz",
+    "odds": "Quote",
+    "favorite": "Favorit",
+    "medium": "Mittelfeld",
+    "outsider": "Außenseiter",
+    "darkHorse": "Geheimfavorit",
+    "winnings": "Gewinn",
+    "netProfit": "Reingewinn"
+  },
+  "starsSection": {
+    "label": "Mehr über die Favoriten",
+    "title": "Stars der Rennsaison 2026",
+    "subtitle": "Erfahren Sie mehr über jedes Rennpferd — seinen Stil, seine Geschichte und warum es Aufmerksamkeit verdient.",
+    "betButton": "Wette platzieren"
+  },
+  "comparison": {
+    "label": "Vergleich",
+    "title": "Wer ist Ihr Favorit?",
+    "subtitle": "Vergleichen Sie die wichtigsten Kennzahlen der fünf Stars der Saison, um eine fundierte Wahl zu treffen.",
+    "horse": "Pferd",
+    "wins": "Siege",
+    "winRate": "Win %",
+    "distance": "Distanz",
+    "odds": "Quote",
+    "style": "Stil",
+    "form": "Form",
+    "visualComparison": "Visueller Vergleich",
+    "speed": "Geschwindigkeit",
+    "endurance": "Ausdauer",
+    "consistency": "Konstanz",
+    "distLong": "Lang",
+    "distSprint": "Sprint",
+    "distMiddle": "Mittel",
+    "styleStable": "Konstant",
+    "styleAggressive": "Aggressiv",
+    "styleReliable": "Zuverlässig",
+    "styleClassic": "Klassisch",
+    "styleVeteran": "Veteran"
+  },
+  "steps": {
+    "label": "Erste Schritte",
+    "title": "Drei einfache Schritte",
+    "step1Title": "Rennen auswählen",
+    "step1Desc": "Öffnen Sie den Zeitplan und wählen Sie das Rennen, das Sie interessiert. Achten Sie auf die Startzeit und die Teilnehmerliste.",
+    "step2Title": "Teilnehmer studieren",
+    "step2Desc": "Sehen Sie sich die Liste der Pferde, ihre Quoten und die Statistik der letzten Auftritte an. Das hilft Ihnen, eine fundierte Wahl zu treffen.",
+    "step3Title": "Wette platzieren",
+    "step3Desc": "Wählen Sie ein Pferd und geben Sie den Betrag ein. Nach der Bestätigung wird die Wette fixiert — dann heißt es nur noch warten auf den Start."
+  },
+  "photoDivider": {
+    "hippodrome": "Eine moderne Rennbahn — Arena für Hunderttausende Zuschauer",
+    "emotion": "Jedes Rennen ist ein Sturm aus Emotionen und Strategie",
+    "journey": "Bereit, Ihre Reise in die Welt der Pferderennen zu beginnen?"
+  },
+  "footer": {
+    "description": "Alles über Pferderennen: von den Grundlagen bis zu den Highlights der Saison",
+    "sections": "Bereiche",
+    "landings": "Landingpages",
+    "beginnersLink": "Pferderennen für Einsteiger",
+    "racesLink": "Rennen 2026",
+    "copyright": "© 2026 RaceHub. Informationsportal. Alle Daten dienen nur als Referenz."
+  },
+  "heroDark": {
+    "label": "Saison 2026",
+    "title1": "Pferderennen — ein Sport,",
+    "title2": "den man mit dem",
+    "title3": "Herzen spürt",
+    "subtitle": "Das ist nicht einfach ein Rennen. Es ist der Moment, in dem Sekunden, Intuition und Charakter alles entscheiden — Pferd und Mensch."
+  },
+  "seasonIntro": {
+    "p1": "Pferderennen gibt es seit Hunderten von Jahren, doch sie lösen immer noch dieselben Emotionen aus: Spannung, Nervenkitzel und diesen besonderen Wow-Effekt im Finish.",
+    "p2": "Die besten Rennpferde trainieren jahrelang, um die perfekte Kombination aus Geschwindigkeit, Ausdauer und Taktik zu zeigen. Millionen Fans verfolgen ihre Auftritte.",
+    "readyTitle": "Bereit, es zu versuchen?",
+    "readyLine1": "Wähle deinen Favoriten.",
+    "readyLine2": "Spüre den Moment des Starts.",
+    "readyLine3": "Und fange diesen besonderen Nervenkitzel ein.",
+    "viewEvents": "Events ansehen"
+  },
+  "countdown": {
+    "label": "Nächstes Event",
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "started": "Das Event hat begonnen",
+    "details": "Mehr erfahren",
+    "grandNationalLocation": "Aintree, Liverpool",
+    "kentuckyDerbyLocation": "Churchill Downs, Louisville",
+    "preaknessLocation": "Pimlico, Baltimore",
+    "arcLocation": "ParisLongchamp, Paris",
+    "breedersCupLocation": "Keeneland, Lexington"
+  },
+  "grandNationalPreview": {
+    "label": "Nächstes Event · 11. April 2026",
+    "title": "Grand National Festival",
+    "subtitle": "Aintree, Liverpool · 16:00 BST · Willie Mullins schickt 9 Pferde ins Rennen (26% des Feldes). I Am Maximus versucht, das erste Pferd mit drei Siegen in Folge zu werden.",
+    "favoritesLabel": "Top-Favoriten · Quoten",
+    "note2xChamp": "2x Champion",
+    "note2nd2025": "2. Platz 2025",
+    "note4th2025": "4. Platz 2025",
+    "keyFacts": "Wichtige Zahlen",
+    "participants": "Teilnehmer",
+    "fences": "Hindernisse",
+    "kmDistance": "km Distanz",
+    "prizeFund": "Preisgeld",
+    "insightLabel": "Einblick:",
+    "insight": "23 von 34 Teilnehmern trainieren in Irland. Der Favorit gewinnt den Grand National nur in 17% der Fälle — eines der unberechenbarsten Rennen der Welt."
+  },
+  "stats": {
+    "mainEvents": "Große\nEvents",
+    "continents": "Kontinente",
+    "prizeDollars": "Dollar\nPreisgeld",
+    "horsesOnStart": "Pferde\nam Start"
+  },
+  "seasonTimeline": {
+    "label": "Zeitplan",
+    "title": "Saison 2026",
+    "grandNational": {
+      "month": "APR",
+      "location": "Liverpool, England",
+      "date": "11. April",
+      "description": "Das berühmteste Hindernisrennen der Welt. 4 Meilen, 30 Hindernisse."
+    },
+    "kentuckyDerby": {
+      "month": "MAI",
+      "location": "Louisville, USA",
+      "date": "2. Mai",
+      "description": "«Die schnellsten zwei Minuten im Sport». Ein Rennen für Dreijährige über 2 km."
+    },
+    "preakness": {
+      "month": "MAI",
+      "location": "Baltimore, USA",
+      "date": "16. Mai",
+      "description": "Die zweite Etappe der Triple Crown. Strategie entscheidet alles."
+    },
+    "arc": {
+      "month": "OKT",
+      "location": "Paris, Frankreich",
+      "date": "4. Oktober",
+      "description": "Das wichtigste Rennen Europas. Die Besten der Welt in Longchamp."
+    },
+    "breedersCup": {
+      "month": "OKT",
+      "location": "Del Mar, USA",
+      "date": "30.–31. Oktober",
+      "description": "Der krönende Abschluss der Saison — die Weltmeisterschaft der Pferderennen."
+    }
+  },
+  "historicalStats": {
+    "label": "Analytik",
+    "title": "Grand National Muster",
+    "subtitle": "71 Jahre Statistik — was wirklich das Ergebnis beeinflusst",
+    "favoritesRare": "Favoriten gewinnen selten",
+    "favoritesText": "Der Favorit gewann 12 von 71 Nachkriegsrennen. In 37 Fällen kam der Favorit nicht einmal ins Ziel.",
+    "favoritesOf": "Favoriten",
+    "recentWinners": "Letzte Gewinner",
+    "winnerProfile": "Das ideale Siegerprofil",
+    "weightVsWins": "Gewicht vs. Siege",
+    "age": "Alter 8–11 Jahre",
+    "ageDetail": "89% der Gewinner",
+    "weightUnder": "Gewicht unter 11 Stone",
+    "weightDetail": "7 von 9 letzten",
+    "irishTrainer": "Irischer Trainer",
+    "irishDetail": "23 von 34 in 2026",
+    "experience": "Erfahrung 30 Hindernisse",
+    "experienceDetail": "Pflicht",
+    "goodForm": "Gute Form",
+    "formDetail": "Nur 17% der Favoriten",
+    "weightUnder10": "Unter 10 Stone",
+    "weight10to11": "10–11 Stone",
+    "weightOver11": "Über 11 Stone",
+    "lightHorses": "Leichtere Pferde gewinnen statistisch häufiger. Von 1989 bis 2004 gewann kein Pferd mit 11+ Stone."
+  },
+  "derbyContenders": {
+    "label": "Kentucky Derby 2026 · 2. Mai",
+    "title": "Die Top-Anwärter",
+    "subtitle": "Die vier Spitzenreiter nach Ergebnissen der G1-Vorbereitungsrennen",
+    "formStat": "Form",
+    "speedStat": "Geschwindigkeit",
+    "classStat": "Klasse",
+    "prepRaces": "Ergebnisse der Vorbereitungsrennen",
+    "race": "Rennen",
+    "winner": "Gewinner",
+    "date": "Datum",
+    "margin": "Vorsprung",
+    "commandmentResult": "1. Platz",
+    "commandmentStreak": "4 Siege in Folge",
+    "renegadeResult": "1. Platz",
+    "renegadeStreak": "Top-Favorit der Buchmacher",
+    "furtherAdoResult": "1. (+11 Längen)",
+    "furtherAdoStreak": "Überlegener Sieg im Blue Grass",
+    "soHappyResult": "1. Platz",
+    "soHappyStreak": "Überraschung der Saison bei 8/1",
+    "prepFloridaDate": "29. Mär",
+    "prepFloridaMargin": "souverän",
+    "prepBlueGrassDate": "5. Apr",
+    "prepBlueGrassMargin": "+11 Längen",
+    "prepSantaAnitaDate": "5. Apr",
+    "prepSantaAnitaMargin": "+2¾ Längen",
+    "prepArkansasDate": "5. Apr",
+    "prepArkansasMargin": "überzeugend"
+  },
+  "worldMap": {
+    "label": "Geografie",
+    "title": "Pferderennen weltweit",
+    "prizes": "Preisgeld",
+    "distanceLabel": "Distanz",
+    "horsesLabel": "Pferde",
+    "grandNationalCity": "Liverpool, England",
+    "grandNationalDate": "April 2026",
+    "grandNationalDistance": "7,2 km",
+    "kentuckyDerbyCity": "Louisville, USA",
+    "kentuckyDerbyDate": "Mai 2026",
+    "kentuckyDerbyDistance": "2 km",
+    "preaknessCity": "Baltimore, USA",
+    "preaknessDate": "Mai 2026",
+    "preaknessDistance": "1,9 km",
+    "arcCity": "Paris, Frankreich",
+    "arcDate": "Oktober 2026",
+    "arcDistance": "2,4 km",
+    "breedersCupCity": "Del Mar, USA",
+    "breedersCupDate": "Oktober 2026",
+    "breedersCupDistance": "Verschiedene"
+  },
+  "raceEvents": {
+    "calendarLabel": "Kalender",
+    "title": "Die großen Rennen 2026",
+    "subtitle": "Hier starten die Favoriten, werden neue Stars geboren und alle Prognosen über den Haufen geworfen.",
+    "betButton": "Wette platzieren"
+  },
+  "photoDividerDark": {
+    "five": "Fünf große Events der Saison auf drei Kontinenten",
+    "history": "Jedes Rennen ist eine Geschichte, die im Galopp geschrieben wird"
+  },
+  "horses": {
+    "iroko": {
+      "country": "Frankreich",
+      "description": "Iroko ist der typische «stille Killer» auf der Strecke: Er fällt nicht sofort auf, landet aber konstant unter den Spitzenreitern.",
+      "why": "Die Wahl für alle, die Risiko minimieren und auf Konstanz setzen wollen. Leichtes Gewicht und ein erfahrener Jockey machen ihn auf der Langstrecke besonders gefährlich."
+    },
+    "commandment": {
+      "country": "USA",
+      "description": "Commandment steht für explosive Geschwindigkeit und Druck ab der ersten Sekunde. Sein Sieg bei den Risen Star Stakes machte ihn zu einem der meistdiskutierten jungen Anwärter.",
+      "why": "Ideal für alle, die Adrenalin spüren wollen: Eine Wette auf ihn ist immer «alles oder nichts». Mit einem starken Jockey kann er ein Tempo vorgeben, das das Rennen einfach «sprengt»."
+    },
+    "barnes": {
+      "country": "USA",
+      "description": "Barnes ist ein Symbol für Zuverlässigkeit: Nach dem Kentucky Derby hat er bewiesen, dass er seine Form halten kann und sich unter dem Druck der Top-Konkurrenz nicht verliert.",
+      "why": "Die ideale «kluge Wahl» — nicht der gehypteste, aber oft der lohnendste. In den Händen eines der besten Jockeys der USA wird er noch gefährlicher."
+    },
+    "minnieHauk": {
+      "country": "Frankreich",
+      "description": "Minnie Hauk verkörpert Klasse und Abstammung. Sie wird bereits als zukünftiger Star auf Prix de l'Arc de Triomphe-Niveau gehandelt.",
+      "why": "Eine Wette auf sie ist eine Entscheidung für offensichtliches Talent. Ein erfahrener Weltklasse-Jockey verstärkt das Gefühl, dass alles «unter Kontrolle» ist."
+    },
+    "senorBuscador": {
+      "country": "USA",
+      "description": "Senor Buscador ist ein Veteran mit Charakter, der mehr als einmal zurückkam, als man ihn bereits abgeschrieben hatte. Seine G1-Erfahrung macht ihn gegen jedes Feld gefährlich.",
+      "why": "Eine Comeback-Geschichte, der man die Daumen drücken will. Mit seinem Jockey kann er selbst in den härtesten Rennen das Maximum herausholen."
+    }
+  },
+  "raceEventsData": {
+    "grandNational": {
+      "date": "April 2026",
+      "month": "APR",
+      "description": "Der Grand National ist eine Überlebensprüfung, bei der Favoriten oft denen unterliegen, die einfach die Distanz durchgehalten haben. Jede Sekunde ist voller Spannung, und das Finish ist fast immer eine Geschichte gegen alle Erwartungen."
+    },
+    "kentuckyDerby": {
+      "date": "Mai 2026",
+      "month": "MAI",
+      "description": "Das Kentucky Derby ist der Moment, in dem Stars geboren werden. Junge Pferde treten mit der Chance an, Geschichte zu schreiben."
+    },
+    "preakness": {
+      "date": "Mai 2026",
+      "month": "MAI",
+      "description": "Nach dem Derby entscheidet sich hier, ob der Champion wirklich Reserven hat. Der Preakness ist ein Rennen, bei dem Strategie in den Vordergrund tritt und Fehler zu teuer sind."
+    },
+    "arc": {
+      "date": "Oktober 2026",
+      "month": "OKT",
+      "description": "Der Arc ist das wichtigste Rennen Europas, wo die Besten der Besten aufeinandertreffen."
+    },
+    "breedersCup": {
+      "date": "Oktober 2026",
+      "month": "OKT",
+      "description": "Der Breeders' Cup ist der krönende Abschluss der Saison, faktisch eine «Weltmeisterschaft», die die Besten aus allen Kontinenten versammelt."
+    }
+  },
+  "metadata": {
+    "beginnersTitle": "Pferderennen für Einsteiger",
+    "beginnersDescription": "Der komplette Leitfaden zu Pferderennen: wie Rennen funktionieren, Distanzen, Wettrechner und die Stars der Saison 2026.",
+    "racesTitle": "Pferderennen 2026 — Die großen Events der Saison",
+    "racesDescription": "Grand National, Kentucky Derby, Prix de l'Arc de Triomphe, Breeders' Cup. Analytik, Quoten, echte Daten."
+  }
+}

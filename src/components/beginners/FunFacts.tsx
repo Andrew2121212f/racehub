@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 // Хук для анимированного счётчика
 function useAnimatedCounter(target: number, duration = 2, isInView = false) {
@@ -69,47 +70,48 @@ const icons = {
   ),
 };
 
-const facts = [
-  {
-    number: 70,
-    prefix: "",
-    suffix: "",
-    unit: "км/ч",
-    label: "Максимальная скорость",
-    description: "Средняя скорость скаковой лошади на спринте. Это быстрее, чем допустимая скорость в городе.",
-    icon: icons.speed,
-  },
-  {
-    number: 500,
-    prefix: "",
-    suffix: "",
-    unit: "кг",
-    label: "Вес скакуна",
-    description: "Средний вес чистокровной скаковой лошади. При этом жокей весит всего 50-55 кг.",
-    icon: icons.weight,
-  },
-  {
-    number: 300,
-    prefix: "",
-    suffix: "+",
-    unit: "лет",
-    label: "История скачек",
-    description: "Скачки как организованный спорт существуют с XVIII века. Первый Derby состоялся в 1780 году.",
-    icon: icons.history,
-  },
-  {
-    number: 35,
-    prefix: "$",
-    suffix: "M",
-    unit: "",
-    label: "Рекорд приза",
-    description: "Saudi Cup — самая дорогая скачка в мире с призовым фондом в $35 миллионов.",
-    icon: icons.prize,
-  },
-];
-
 // Инфографика — анимированные цифры + иконки + опциональный видео-фон
 export default function FunFacts({ videoSrc }: { videoSrc?: string }) {
+  const t = useTranslations("funFacts");
+
+  const facts = [
+    {
+      number: 70,
+      prefix: "",
+      suffix: "",
+      unit: t("speedUnit"),
+      label: t("speedLabel"),
+      description: t("speedDesc"),
+      icon: icons.speed,
+    },
+    {
+      number: 500,
+      prefix: "",
+      suffix: "",
+      unit: t("weightUnit"),
+      label: t("weightLabel"),
+      description: t("weightDesc"),
+      icon: icons.weight,
+    },
+    {
+      number: 300,
+      prefix: "",
+      suffix: "+",
+      unit: t("historyUnit"),
+      label: t("historyLabel"),
+      description: t("historyDesc"),
+      icon: icons.history,
+    },
+    {
+      number: 35,
+      prefix: "$",
+      suffix: "M",
+      unit: "",
+      label: t("prizeLabel"),
+      description: t("prizeDesc"),
+      icon: icons.prize,
+    },
+  ];
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -158,10 +160,10 @@ export default function FunFacts({ videoSrc }: { videoSrc?: string }) {
           className="text-center mb-24"
         >
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
-            Интересные факты
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-editorial-text leading-tight">
-            Скачки в цифрах
+            {t("title")}
           </h2>
         </motion.div>
 

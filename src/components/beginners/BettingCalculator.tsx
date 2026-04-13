@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // Интерактивный калькулятор ставок
 export default function BettingCalculator() {
+  const t = useTranslations("calculator");
   const [amount, setAmount] = useState(100);
   const [odds, setOdds] = useState(2.5);
 
@@ -13,10 +15,10 @@ export default function BettingCalculator() {
 
   // Предустановленные коэффициенты
   const presetOdds = [
-    { label: "Фаворит", value: 1.5, risk: "Низкий" },
-    { label: "Средний", value: 2.5, risk: "Средний" },
-    { label: "Аутсайдер", value: 5.0, risk: "Высокий" },
-    { label: "Тёмная лошадка", value: 10.0, risk: "Очень высокий" },
+    { label: t("favorite"), value: 1.5 },
+    { label: t("medium"), value: 2.5 },
+    { label: t("outsider"), value: 5.0 },
+    { label: t("darkHorse"), value: 10.0 },
   ];
 
   return (
@@ -32,16 +34,16 @@ export default function BettingCalculator() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
-              Попробуйте сами
+              {t("label")}
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-editorial-text leading-tight mb-8">
-              Калькулятор
+              {t("title")}
               <br />
-              <span className="italic">ставок</span>
+              <span className="italic">{t("titleItalic")}</span>
             </h2>
             <div className="editorial-divider mb-8" />
             <p className="text-editorial-text-muted text-lg leading-relaxed">
-              Передвигайте ползунки, чтобы увидеть, как меняется потенциальный выигрыш в зависимости от суммы ставки и коэффициента.
+              {t("description")}
             </p>
           </motion.div>
 
@@ -58,7 +60,7 @@ export default function BettingCalculator() {
               <div className="mb-12">
                 <div className="flex justify-between items-baseline mb-4">
                   <label className="text-editorial-text-muted text-xs tracking-[0.3em] uppercase">
-                    Сумма ставки
+                    {t("betAmount")}
                   </label>
                   <span className="font-[family-name:var(--font-playfair)] text-3xl text-editorial-text">
                     {amount} MAD
@@ -82,7 +84,7 @@ export default function BettingCalculator() {
               {/* Коэффициент — пресеты */}
               <div className="mb-12">
                 <label className="text-editorial-text-muted text-xs tracking-[0.3em] uppercase block mb-6">
-                  Коэффициент
+                  {t("odds")}
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {presetOdds.map((preset) => (
@@ -111,7 +113,7 @@ export default function BettingCalculator() {
                 <div className="grid grid-cols-2 gap-8">
                   <div>
                     <p className="text-editorial-text-muted text-xs uppercase tracking-wider mb-2">
-                      Выигрыш
+                      {t("winnings")}
                     </p>
                     <motion.p
                       key={winnings}
@@ -124,7 +126,7 @@ export default function BettingCalculator() {
                   </div>
                   <div>
                     <p className="text-editorial-text-muted text-xs uppercase tracking-wider mb-2">
-                      Чистая прибыль
+                      {t("netProfit")}
                     </p>
                     <motion.p
                       key={profit}

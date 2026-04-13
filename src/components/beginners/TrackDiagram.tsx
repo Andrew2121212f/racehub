@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 // Параметры эллипса трека
 const CX = 400;
@@ -65,6 +66,8 @@ function RunningDot() {
 
 // Анимированная SVG-схема ипподрома
 export default function TrackDiagram() {
+  const t = useTranslations("trackDiagram");
+
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24 bg-editorial-bg-alt">
       <div className="max-w-6xl mx-auto">
@@ -76,10 +79,10 @@ export default function TrackDiagram() {
           className="text-center mb-20"
         >
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
-            Как устроена трасса
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-editorial-text leading-tight">
-            Анатомия ипподрома
+            {t("title")}
           </h2>
         </motion.div>
 
@@ -141,43 +144,42 @@ export default function TrackDiagram() {
             {/* Старт/Финиш */}
             <div className="absolute right-[3%] top-1/2 -translate-y-1/2 text-right">
               <div className="bg-editorial-accent text-white px-4 py-2 text-xs tracking-wider uppercase">
-                Старт / Финиш
+                {t("startFinish")}
               </div>
             </div>
 
             {/* Первый поворот */}
             <div className="absolute right-[15%] top-[5%]">
               <span className="text-editorial-text-muted text-xs tracking-wider">
-                1-й поворот
+                {t("turn1")}
               </span>
             </div>
 
             {/* Дальняя прямая */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[5%]">
               <span className="text-editorial-text-muted text-xs tracking-wider">
-                Дальняя прямая
+                {t("backStraight")}
               </span>
             </div>
 
             {/* Второй поворот */}
             <div className="absolute left-[15%] top-[5%]">
               <span className="text-editorial-text-muted text-xs tracking-wider">
-                2-й поворот
+                {t("turn2")}
               </span>
             </div>
 
             {/* Финишная прямая */}
             <div className="absolute right-[15%] bottom-[5%]">
               <span className="text-editorial-accent text-xs tracking-wider font-medium">
-                Финишная прямая →
+                {t("homeStraight")}
               </span>
             </div>
           </div>
         </motion.div>
 
         <p className="text-center text-editorial-text-muted text-sm mt-12 max-w-lg mx-auto italic">
-          Большинство ипподромов имеют овальную форму. Решающий рывок происходит
-          на финишной прямой — последних 200-400 метрах.
+          {t("description")}
         </p>
       </div>
     </section>

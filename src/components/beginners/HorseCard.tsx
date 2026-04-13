@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import type { Horse } from "@/lib/data";
 
 // Карточка лошади — крупное фото с параллаксом + текст
@@ -15,6 +16,12 @@ export default function HorseCard({
   index: number;
   reversed?: boolean;
 }) {
+  const t = useTranslations("starsSection");
+  const th = useTranslations("horses");
+
+  // Маппинг id → ключ перевода
+  const horseKey = horse.id === "minnie-hauk" ? "minnieHauk" : horse.id === "senor-buscador" ? "senorBuscador" : horse.id;
+
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -59,7 +66,7 @@ export default function HorseCard({
 
           {/* Страна — бейдж на фото */}
           <div className="absolute top-4 left-4 bg-editorial-accent/90 text-white px-3 py-1.5 text-xs tracking-[0.2em] uppercase z-10">
-            {horse.country}
+            {th(`${horseKey}.country`)}
           </div>
         </div>
       </div>
@@ -73,11 +80,11 @@ export default function HorseCard({
         <div className="editorial-divider mb-8" />
 
         <p className="text-editorial-text-muted text-lg leading-relaxed mb-5">
-          {horse.description}
+          {th(`${horseKey}.description`)}
         </p>
 
         <p className="text-editorial-text leading-relaxed mb-10 text-sm">
-          {horse.why}
+          {th(`${horseKey}.why`)}
         </p>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -85,7 +92,7 @@ export default function HorseCard({
             href="#"
             className="inline-block bg-editorial-accent text-white px-8 py-4 text-sm tracking-[0.2em] uppercase hover:bg-editorial-accent-light transition-colors duration-300"
           >
-            Сделать ставку
+            {t("betButton")}
           </a>
           <Link
             href={horse.eventLink}

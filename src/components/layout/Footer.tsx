@@ -2,28 +2,31 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-
-// Секции для навигации
-const beginnersSections = [
-  { label: "Что такое скачки", href: "#" },
-  { label: "Дистанции", href: "#" },
-  { label: "Калькулятор ставок", href: "#" },
-  { label: "Звёзды 2026", href: "#" },
-];
-
-const racesSections = [
-  { label: "Grand National", href: "#grand-national" },
-  { label: "Kentucky Derby", href: "#kentucky-derby" },
-  { label: "Preakness Stakes", href: "#preakness" },
-  { label: "Prix de l'Arc", href: "#arc" },
-  { label: "Breeders' Cup", href: "#breeders-cup" },
-];
 
 // Footer с навигацией по секциям
 export default function Footer() {
+  const t = useTranslations("footer");
+  const tn = useTranslations("nav");
   const pathname = usePathname();
-  const isDark = pathname === "/races";
+  const isDark = pathname.includes("/races");
+
+  // Секции для навигации
+  const beginnersSections = [
+    { label: tn("what"), href: "#what" },
+    { label: tn("distances"), href: "#distances" },
+    { label: tn("calculator"), href: "#calculator" },
+    { label: tn("stars"), href: "#stars" },
+  ];
+
+  const racesSections = [
+    { label: tn("grandNational"), href: "#grand-national" },
+    { label: tn("timeline"), href: "#timeline" },
+    { label: tn("analytics"), href: "#analytics" },
+    { label: tn("map"), href: "#world-map" },
+    { label: tn("contenders"), href: "#contenders" },
+  ];
   const sections = isDark ? racesSections : beginnersSections;
 
   return (
@@ -44,7 +47,7 @@ export default function Footer() {
               RaceHub
             </p>
             <p className={cn("text-sm leading-relaxed", isDark ? "text-dark-text-muted" : "text-editorial-text-muted")}>
-              Всё о скачках: от основ до главных событий сезона
+              {t("description")}
             </p>
           </div>
 
@@ -54,7 +57,7 @@ export default function Footer() {
               "text-xs tracking-[0.3em] uppercase mb-5",
               isDark ? "text-dark-gold" : "text-editorial-accent"
             )}>
-              Разделы
+              {t("sections")}
             </p>
             <ul className="space-y-3">
               {sections.map((s) => (
@@ -79,7 +82,7 @@ export default function Footer() {
               "text-xs tracking-[0.3em] uppercase mb-5",
               isDark ? "text-dark-gold" : "text-editorial-accent"
             )}>
-              Лендинги
+              {t("landings")}
             </p>
             <ul className="space-y-3">
               <li>
@@ -90,7 +93,7 @@ export default function Footer() {
                     isDark ? "text-dark-text-muted hover:text-dark-text" : "text-editorial-text-muted hover:text-editorial-text"
                   )}
                 >
-                  Скачки для новичков
+                  {t("beginnersLink")}
                 </Link>
               </li>
               <li>
@@ -101,7 +104,7 @@ export default function Footer() {
                     isDark ? "text-dark-text-muted hover:text-dark-text" : "text-editorial-text-muted hover:text-editorial-text"
                   )}
                 >
-                  Скачки 2026
+                  {t("racesLink")}
                 </Link>
               </li>
             </ul>
@@ -111,7 +114,7 @@ export default function Footer() {
         {/* Копирайт */}
         <div className={cn("pt-8 border-t", isDark ? "border-dark-border" : "border-editorial-border")}>
           <p className={cn("text-xs", isDark ? "text-dark-text-muted" : "text-editorial-text-muted")}>
-            &copy; 2026 RaceHub. Информационный ресурс. Все данные носят справочный характер.
+            {t("copyright")}
           </p>
         </div>
       </div>

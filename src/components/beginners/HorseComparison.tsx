@@ -1,82 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-// Данные для сравнительной таблицы с характеристиками для chart
-const horseStats = [
-  {
-    name: "Iroko",
-    country: "\u{1F1EB}\u{1F1F7}",
-    wins: 7,
-    winRate: 58,
-    bestDist: "Длинная",
-    odds: 4.2,
-    style: "Стабильный",
-    form: "\u2588\u2588\u2588\u2588\u2591",
-    // Характеристики для визуализации (0-100)
-    speed: 65,
-    endurance: 85,
-    consistency: 80,
-  },
-  {
-    name: "Commandment",
-    country: "\u{1F1FA}\u{1F1F8}",
-    wins: 5,
-    winRate: 63,
-    bestDist: "Спринт",
-    odds: 3.1,
-    style: "Агрессивный",
-    form: "\u2588\u2588\u2588\u2588\u2588",
-    speed: 95,
-    endurance: 50,
-    consistency: 70,
-  },
-  {
-    name: "Barnes",
-    country: "\u{1F1FA}\u{1F1F8}",
-    wins: 6,
-    winRate: 55,
-    bestDist: "Средняя",
-    odds: 5.0,
-    style: "Надёжный",
-    form: "\u2588\u2588\u2588\u2591\u2591",
-    speed: 70,
-    endurance: 75,
-    consistency: 85,
-  },
-  {
-    name: "Minnie Hauk",
-    country: "\u{1F1EB}\u{1F1F7}",
-    wins: 4,
-    winRate: 67,
-    bestDist: "Средняя",
-    odds: 2.8,
-    style: "Классический",
-    form: "\u2588\u2588\u2588\u2588\u2591",
-    speed: 80,
-    endurance: 70,
-    consistency: 90,
-  },
-  {
-    name: "Senor Buscador",
-    country: "\u{1F1FA}\u{1F1F8}",
-    wins: 9,
-    winRate: 45,
-    bestDist: "Длинная",
-    odds: 7.5,
-    style: "Ветеран",
-    form: "\u2588\u2588\u2591\u2591\u2591",
-    speed: 60,
-    endurance: 90,
-    consistency: 55,
-  },
-];
-
-const statLabels = [
-  { key: "speed" as const, label: "Скорость" },
-  { key: "endurance" as const, label: "Выносливость" },
-  { key: "consistency" as const, label: "Стабильность" },
-];
+import { useTranslations } from "next-intl";
 
 // Горизонтальный bar для характеристики
 function StatBar({ value, delay }: { value: number; delay: number }) {
@@ -95,6 +20,81 @@ function StatBar({ value, delay }: { value: number; delay: number }) {
 
 // Таблица сравнения лошадей + визуальные характеристики
 export default function HorseComparison() {
+  const t = useTranslations("comparison");
+
+  const horseStats = [
+    {
+      name: "Iroko",
+      country: "\u{1F1EB}\u{1F1F7}",
+      wins: 7,
+      winRate: 58,
+      bestDist: t("distLong"),
+      odds: 4.2,
+      style: t("styleStable"),
+      form: "\u2588\u2588\u2588\u2588\u2591",
+      speed: 65,
+      endurance: 85,
+      consistency: 80,
+    },
+    {
+      name: "Commandment",
+      country: "\u{1F1FA}\u{1F1F8}",
+      wins: 5,
+      winRate: 63,
+      bestDist: t("distSprint"),
+      odds: 3.1,
+      style: t("styleAggressive"),
+      form: "\u2588\u2588\u2588\u2588\u2588",
+      speed: 95,
+      endurance: 50,
+      consistency: 70,
+    },
+    {
+      name: "Barnes",
+      country: "\u{1F1FA}\u{1F1F8}",
+      wins: 6,
+      winRate: 55,
+      bestDist: t("distMiddle"),
+      odds: 5.0,
+      style: t("styleReliable"),
+      form: "\u2588\u2588\u2588\u2591\u2591",
+      speed: 70,
+      endurance: 75,
+      consistency: 85,
+    },
+    {
+      name: "Minnie Hauk",
+      country: "\u{1F1EB}\u{1F1F7}",
+      wins: 4,
+      winRate: 67,
+      bestDist: t("distMiddle"),
+      odds: 2.8,
+      style: t("styleClassic"),
+      form: "\u2588\u2588\u2588\u2588\u2591",
+      speed: 80,
+      endurance: 70,
+      consistency: 90,
+    },
+    {
+      name: "Senor Buscador",
+      country: "\u{1F1FA}\u{1F1F8}",
+      wins: 9,
+      winRate: 45,
+      bestDist: t("distLong"),
+      odds: 7.5,
+      style: t("styleVeteran"),
+      form: "\u2588\u2588\u2591\u2591\u2591",
+      speed: 60,
+      endurance: 90,
+      consistency: 55,
+    },
+  ];
+
+  const statLabels = [
+    { key: "speed" as const, label: t("speed") },
+    { key: "endurance" as const, label: t("endurance") },
+    { key: "consistency" as const, label: t("consistency") },
+  ];
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24 bg-editorial-bg-alt">
       <div className="max-w-6xl mx-auto">
@@ -106,13 +106,13 @@ export default function HorseComparison() {
           className="mb-20"
         >
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
-            Сравнение
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-editorial-text leading-tight mb-6">
-            Кто ваш фаворит?
+            {t("title")}
           </h2>
           <p className="text-editorial-text-muted text-lg max-w-xl">
-            Сравните ключевые показатели пяти звёзд сезона, чтобы сделать осознанный выбор.
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -128,25 +128,25 @@ export default function HorseComparison() {
             <thead>
               <tr className="border-b-2 border-editorial-accent">
                 <th className="text-left py-5 pr-6 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Лошадь
+                  {t("horse")}
                 </th>
                 <th className="text-center py-5 px-4 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Побед
+                  {t("wins")}
                 </th>
                 <th className="text-center py-5 px-4 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Win %
+                  {t("winRate")}
                 </th>
                 <th className="text-center py-5 px-4 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Дистанция
+                  {t("distance")}
                 </th>
                 <th className="text-center py-5 px-4 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Коэфф.
+                  {t("odds")}
                 </th>
                 <th className="text-center py-5 px-4 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Стиль
+                  {t("style")}
                 </th>
                 <th className="text-center py-5 pl-4 text-xs text-editorial-text-muted tracking-[0.2em] uppercase">
-                  Форма
+                  {t("form")}
                 </th>
               </tr>
             </thead>
@@ -206,7 +206,7 @@ export default function HorseComparison() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-10">
-            Визуальное сравнение
+            {t("visualComparison")}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,27 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    num: "01",
-    title: "Выберите заезд",
-    description: "Откройте расписание и выберите интересующую вас гонку. Обратите внимание на время старта и список участников.",
-  },
-  {
-    num: "02",
-    title: "Изучите участников",
-    description: "Посмотрите список лошадей, их коэффициенты и статистику последних выступлений. Это поможет сделать осознанный выбор.",
-  },
-  {
-    num: "03",
-    title: "Сделайте ставку",
-    description: "Выберите лошадь и укажите сумму. После подтверждения ставка фиксируется, и остаётся дождаться начала гонки.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 // Пошаговый гид — крупные номера, много пространства
 export default function StepsGuide() {
+  const t = useTranslations("steps");
+
+  const steps = [
+    { num: "01", title: t("step1Title"), description: t("step1Desc") },
+    { num: "02", title: t("step2Title"), description: t("step2Desc") },
+    { num: "03", title: t("step3Title"), description: t("step3Desc") },
+  ];
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto">
@@ -33,10 +23,10 @@ export default function StepsGuide() {
           className="mb-24 md:mb-36"
         >
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
-            Как начать
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-editorial-text leading-tight">
-            Три простых шага
+            {t("title")}
           </h2>
         </motion.div>
 

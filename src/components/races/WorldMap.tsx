@@ -2,74 +2,77 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-
-// События на карте — координаты в % от изображения карты
-const locations = [
-  {
-    name: "Grand National",
-    city: "Ливерпуль, Англия",
-    date: "Апрель 2026",
-    prize: "£1M",
-    distance: "7,2 км",
-    horses: "40",
-    x: 48,
-    y: 24,
-    id: "grand-national",
-    image: "/races/grand-national.jpg",
-  },
-  {
-    name: "Kentucky Derby",
-    city: "Луисвилл, США",
-    date: "Май 2026",
-    prize: "$3M",
-    distance: "2 км",
-    horses: "20",
-    x: 22,
-    y: 37,
-    id: "kentucky-derby",
-    image: "/races/kentucky-derby.jpg",
-  },
-  {
-    name: "Preakness Stakes",
-    city: "Балтимор, США",
-    date: "Май 2026",
-    prize: "$1.5M",
-    distance: "1,9 км",
-    horses: "14",
-    x: 25,
-    y: 35,
-    id: "preakness",
-    image: "/races/preakness.jpg",
-  },
-  {
-    name: "Prix de l'Arc",
-    city: "Париж, Франция",
-    date: "Октябрь 2026",
-    prize: "€5M",
-    distance: "2,4 км",
-    horses: "20",
-    x: 50,
-    y: 27,
-    id: "arc",
-    image: "/races/prix-arc.jpg",
-  },
-  {
-    name: "Breeders' Cup",
-    city: "Дель Мар, США",
-    date: "Октябрь 2026",
-    prize: "$31M",
-    distance: "Разные",
-    horses: "200+",
-    x: 13,
-    y: 39,
-    id: "breeders-cup",
-    image: "/races/breeders-cup.jpg",
-  },
-];
+import { useTranslations } from "next-intl";
 
 // Карта мира с реальным фоном + интерактивные точки
 export default function WorldMap() {
+  const t = useTranslations("worldMap");
   const [hoveredEvent, setHoveredEvent] = useState<string | null>(null);
+
+  // События на карте — координаты в % от изображения карты
+  const locations = [
+    {
+      name: "Grand National",
+      city: t("grandNationalCity"),
+      date: t("grandNationalDate"),
+      prize: "£1M",
+      distance: t("grandNationalDistance"),
+      horses: "40",
+      x: 48,
+      y: 24,
+      id: "grand-national",
+      image: "/races/grand-national.jpg",
+    },
+    {
+      name: "Kentucky Derby",
+      city: t("kentuckyDerbyCity"),
+      date: t("kentuckyDerbyDate"),
+      prize: "$3M",
+      distance: t("kentuckyDerbyDistance"),
+      horses: "20",
+      x: 22,
+      y: 37,
+      id: "kentucky-derby",
+      image: "/races/kentucky-derby.jpg",
+    },
+    {
+      name: "Preakness Stakes",
+      city: t("preaknessCity"),
+      date: t("preaknessDate"),
+      prize: "$1.5M",
+      distance: t("preaknessDistance"),
+      horses: "14",
+      x: 25,
+      y: 35,
+      id: "preakness",
+      image: "/races/preakness.jpg",
+    },
+    {
+      name: "Prix de l'Arc",
+      city: t("arcCity"),
+      date: t("arcDate"),
+      prize: "€5M",
+      distance: t("arcDistance"),
+      horses: "20",
+      x: 50,
+      y: 27,
+      id: "arc",
+      image: "/races/prix-arc.jpg",
+    },
+    {
+      name: "Breeders' Cup",
+      city: t("breedersCupCity"),
+      date: t("breedersCupDate"),
+      prize: "$31M",
+      distance: t("breedersCupDistance"),
+      horses: "200+",
+      x: 13,
+      y: 39,
+      id: "breeders-cup",
+      image: "/races/breeders-cup.jpg",
+    },
+  ];
+
   const activeEvent = locations.find((l) => l.id === hoveredEvent);
 
   return (
@@ -83,10 +86,10 @@ export default function WorldMap() {
           className="text-center mb-16"
         >
           <p className="text-dark-gold text-xs tracking-[0.5em] uppercase mb-8">
-            География
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-dark-text leading-tight">
-            Скачки по всему миру
+            {t("title")}
           </h2>
         </motion.div>
 
@@ -200,15 +203,15 @@ export default function WorldMap() {
                   <div className="grid grid-cols-3 gap-3 pt-3 border-t border-dark-border">
                     <div>
                       <p className="text-dark-gold text-sm font-medium">{activeEvent.prize}</p>
-                      <p className="text-dark-text-muted text-[10px]">Призовые</p>
+                      <p className="text-dark-text-muted text-[10px]">{t("prizes")}</p>
                     </div>
                     <div>
                       <p className="text-dark-text text-sm font-medium">{activeEvent.distance}</p>
-                      <p className="text-dark-text-muted text-[10px]">Дистанция</p>
+                      <p className="text-dark-text-muted text-[10px]">{t("distanceLabel")}</p>
                     </div>
                     <div>
                       <p className="text-dark-text text-sm font-medium">{activeEvent.horses}</p>
-                      <p className="text-dark-text-muted text-[10px]">Лошадей</p>
+                      <p className="text-dark-text-muted text-[10px]">{t("horsesLabel")}</p>
                     </div>
                   </div>
                 </div>

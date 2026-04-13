@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // Вступление — щедрые отступы, много воздуха
 export default function SeasonIntro() {
+  const t = useTranslations("seasonIntro");
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto">
@@ -17,10 +19,10 @@ export default function SeasonIntro() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-dark-text-muted text-lg md:text-xl leading-relaxed mb-10">
-              Скачки существуют сотни лет, но до сих пор вызывают те же эмоции: напряжение, азарт и тот самый «вау-эффект» на финише.
+              {t("p1")}
             </p>
             <p className="text-dark-text-muted text-lg md:text-xl leading-relaxed">
-              Лучшие скакуны тренируются годами, чтобы показать идеальное сочетание скорости, выносливости и тактики. За их выступлениями следят миллионы поклонников.
+              {t("p2")}
             </p>
           </motion.div>
 
@@ -34,20 +36,20 @@ export default function SeasonIntro() {
           >
             <div className="border-l-2 border-dark-gold pl-10">
               <p className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-dark-text mb-4 italic">
-                Готов попробовать?
+                {t("readyTitle")}
               </p>
               <p className="text-dark-text-muted text-base leading-relaxed mb-10">
-                Выбери своего фаворита.
+                {t("readyLine1")}
                 <br />
-                Почувствуй момент старта.
+                {t("readyLine2")}
                 <br />
-                И поймай тот самый азарт.
+                {t("readyLine3")}
               </p>
               <a
                 href="#events"
                 className="gold-shimmer inline-block text-black px-10 py-4 text-sm tracking-[0.2em] uppercase font-medium"
               >
-                Смотреть события
+                {t("viewEvents")}
               </a>
             </div>
           </motion.div>

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import HeroEditorial from "@/components/beginners/HeroEditorial";
@@ -12,25 +11,35 @@ import HorseComparison from "@/components/beginners/HorseComparison";
 import HorseCard from "@/components/beginners/HorseCard";
 import PhotoDivider from "@/components/beginners/PhotoDivider";
 import { horses } from "@/lib/data";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Скачки для новичков",
-  description: "Полный гид по скачкам: как устроены гонки, дистанции, калькулятор ставок и звёзды сезона 2026.",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("metadata");
+  return {
+    title: t("beginnersTitle"),
+    description: t("beginnersDescription"),
+  };
+}
 
 // Лендинг 1: Скачки для новичков — Editorial стиль
 export default function BeginnersPage() {
+  const t = useTranslations("starsSection");
+  const tp = useTranslations("photoDivider");
+
   return (
     <div className="editorial-page min-h-screen">
       <Navigation />
 
       <HeroEditorial />
-      <WhatAreRaces />
+      <div id="what">
+        <WhatAreRaces />
+      </div>
 
       <PhotoDivider
         src="/aerial-optimized.jpg"
         alt="Вид на ипподром с высоты — лошади на трассе"
-        caption="Современный ипподром — арена для сотен тысяч зрителей"
+        caption={tp("hippodrome")}
       />
 
       <div id="track">
@@ -52,20 +61,20 @@ export default function BeginnersPage() {
       <PhotoDivider
         src="/rider-optimized.jpg"
         alt="Жокей тренируется с лошадью"
-        caption="Каждый заезд — это буря эмоций и стратегии"
+        caption={tp("emotion")}
         height="55vh"
       />
 
       <section id="stars" className="py-32 md:py-48 px-8 md:px-16 lg:px-24">
         <div className="max-w-6xl mx-auto">
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-6">
-            Подробнее о фаворитах
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-editorial-text mb-6 leading-tight">
-            Звёзды скачек 2026
+            {t("title")}
           </h2>
           <p className="text-editorial-text-muted text-lg md:text-xl max-w-2xl mb-20 md:mb-28">
-            Узнайте больше о каждом скакуне — его стиль, история и почему на него стоит обратить внимание.
+            {t("subtitle")}
           </p>
 
           <div>
@@ -88,7 +97,7 @@ export default function BeginnersPage() {
       <PhotoDivider
         src="/equestrian-optimized.jpg"
         alt="Наездница на лошади"
-        caption="Готовы начать своё путешествие в мир скачек?"
+        caption={tp("journey")}
         height="50vh"
       />
 

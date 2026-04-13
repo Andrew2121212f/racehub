@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import type { RaceEvent } from "@/lib/data";
 
 // Карточка события — dark тема, параллакс, чередующийся layout
@@ -12,6 +13,11 @@ export default function RaceCard({
   event: RaceEvent;
   index: number;
 }) {
+  const t = useTranslations("raceEvents");
+  const td = useTranslations("raceEventsData");
+
+  const eventKey = event.id === "breeders-cup" ? "breedersCup" : event.id === "kentucky-derby" ? "kentuckyDerby" : event.id === "grand-national" ? "grandNational" : event.id;
+
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -52,7 +58,7 @@ export default function RaceCard({
 
         {/* Бейдж месяца */}
         <div className="absolute top-6 left-6 bg-dark-gold text-black px-3 py-1.5 text-xs tracking-[0.3em] uppercase font-medium">
-          {event.month}
+          {td(`${eventKey}.month`)}
         </div>
       </div>
 
@@ -63,20 +69,20 @@ export default function RaceCard({
         }`}
       >
         <p className="text-dark-gold text-xs tracking-[0.3em] uppercase mb-4">
-          {event.date}
+          {td(`${eventKey}.date`)}
         </p>
         <h3 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl text-dark-text mb-6 leading-tight">
           {event.name}
         </h3>
         <div className="w-10 h-px bg-dark-gold mb-6" />
         <p className="text-dark-text-muted leading-relaxed text-base mb-10">
-          {event.description}
+          {td(`${eventKey}.description`)}
         </p>
         <a
           href="#"
           className="gold-shimmer self-start text-black px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium"
         >
-          Сделать ставку
+          {t("betButton")}
         </a>
       </div>
     </motion.article>

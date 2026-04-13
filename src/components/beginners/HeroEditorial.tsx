@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { heroVideos } from "@/lib/data";
 
 // Hero-секция: видео-фон + журнальная типографика + много воздуха
 export default function HeroEditorial() {
+  const t = useTranslations("hero");
   return (
     <section className="min-h-screen flex items-end pb-32 md:pb-40 px-8 md:px-16 lg:px-24 pt-32 relative overflow-hidden">
       {/* Видео-фон */}
@@ -31,20 +33,20 @@ export default function HeroEditorial() {
         >
           {/* Лейбл */}
           <p className="text-editorial-accent text-xs tracking-[0.4em] uppercase mb-8 font-medium">
-            Гид для начинающих
+            {t("label")}
           </p>
 
           {/* Главный заголовок */}
           <h1 className="font-[family-name:var(--font-playfair)] text-6xl md:text-8xl lg:text-9xl leading-[0.9] text-editorial-text mb-12">
-            Скачки
-            <span className="italic text-editorial-accent"> для</span>
+            {t("title1")}
+            <span className="italic text-editorial-accent">{" "}{t("titleFor")}</span>
             <br />
-            новичков
+            {t("title2")}
           </h1>
 
           {/* Подзаголовок */}
           <p className="text-editorial-text-muted text-lg md:text-xl max-w-lg leading-relaxed">
-            Конный спорт может показаться сложным, но на самом деле всё довольно просто: несколько лошадей стартуют одновременно, и побеждает та, которая первой пересекает финиш.
+            {t("subtitle")}
           </p>
         </motion.div>
 

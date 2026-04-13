@@ -1,23 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-// Реальные данные Grand National 2026
-const favorites = [
-  { name: "I Am Maximus", jockey: "P. Townend", trainer: "W. Mullins", odds: 7, note: "2x чемпион" },
-  { name: "Grangeclare West", jockey: "P. Mullins", trainer: "W. Mullins", odds: 9, note: "2-е место 2025" },
-  { name: "Panic Attack", jockey: "H. Skelton", trainer: "D. Skelton", odds: 10, note: "" },
-  { name: "Jagwar", jockey: "J. O'Neill Jr", trainer: "O. Greenall", odds: 11, note: "JP McManus" },
-  { name: "Johnnywho", jockey: "M. O'Sullivan", trainer: "W. Mullins", odds: 12, note: "JP McManus" },
-  { name: "Iroko", jockey: "J. O'Neill Jr", trainer: "O. Greenall", odds: 14, note: "4-е место 2025" },
-];
-
-const keyFacts = [
-  { value: "34", label: "Участника" },
-  { value: "30", label: "Барьеров" },
-  { value: "7.2", label: "км дистанция" },
-  { value: "£1M", label: "Призовой фонд" },
-];
+import { useTranslations } from "next-intl";
 
 // Ширина odds bar — обратная вероятность (чем ниже odds, тем длиннее бар)
 function oddsToWidth(odds: number): number {
@@ -26,6 +10,25 @@ function oddsToWidth(odds: number): number {
 
 // Анонс Grand National — тёмная секция с фоновым фото, odds bars, facts
 export default function GrandNationalPreview() {
+  const t = useTranslations("grandNationalPreview");
+
+  // Реальные данные Grand National 2026
+  const favorites = [
+    { name: "I Am Maximus", jockey: "P. Townend", trainer: "W. Mullins", odds: 7, note: t("note2xChamp") },
+    { name: "Grangeclare West", jockey: "P. Mullins", trainer: "W. Mullins", odds: 9, note: t("note2nd2025") },
+    { name: "Panic Attack", jockey: "H. Skelton", trainer: "D. Skelton", odds: 10, note: "" },
+    { name: "Jagwar", jockey: "J. O'Neill Jr", trainer: "O. Greenall", odds: 11, note: "JP McManus" },
+    { name: "Johnnywho", jockey: "M. O'Sullivan", trainer: "W. Mullins", odds: 12, note: "JP McManus" },
+    { name: "Iroko", jockey: "J. O'Neill Jr", trainer: "O. Greenall", odds: 14, note: t("note4th2025") },
+  ];
+
+  const keyFacts = [
+    { value: "34", label: t("participants") },
+    { value: "30", label: t("fences") },
+    { value: "7.2", label: t("kmDistance") },
+    { value: "£1M", label: t("prizeFund") },
+  ];
+
   return (
     <section className="relative py-32 md:py-48 px-8 md:px-16 lg:px-24 overflow-hidden">
       {/* Фоновое фото */}
@@ -50,15 +53,14 @@ export default function GrandNationalPreview() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
             <p className="text-dark-gold text-xs tracking-[0.5em] uppercase">
-              Ближайшее событие · 11 апреля 2026
+              {t("label")}
             </p>
           </div>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-dark-text leading-tight mb-4">
-            Grand National Festival
+            {t("title")}
           </h2>
           <p className="text-dark-text-muted text-lg max-w-2xl">
-            Aintree, Ливерпуль · 16:00 BST · Willie Mullins выставляет 9 лошадей (26% поля).
-            I Am Maximus пытается стать первым конём с тремя победами подряд.
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -72,7 +74,7 @@ export default function GrandNationalPreview() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-dark-gold text-xs tracking-[0.3em] uppercase mb-8">
-              Топ фавориты · коэффициенты
+              {t("favoritesLabel")}
             </p>
 
             <div className="space-y-5">
@@ -132,7 +134,7 @@ export default function GrandNationalPreview() {
           >
             <div>
               <p className="text-dark-gold text-xs tracking-[0.3em] uppercase mb-8">
-                Ключевые цифры
+                {t("keyFacts")}
               </p>
 
               <div className="grid grid-cols-2 gap-6">
@@ -165,8 +167,7 @@ export default function GrandNationalPreview() {
               className="mt-8 p-6 bg-dark-gold/5 border-l-2 border-dark-gold"
             >
               <p className="text-dark-text text-sm leading-relaxed">
-                <span className="text-dark-gold font-medium">Инсайт:</span> 23 из 34 участников тренируются в Ирландии.
-                Фаворит побеждает в Grand National лишь в 17% случаев — это одна из самых непредсказуемых гонок в мире.
+                <span className="text-dark-gold font-medium">{t("insightLabel")}</span> {t("insight")}
               </p>
             </motion.div>
           </motion.div>

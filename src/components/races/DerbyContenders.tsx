@@ -1,57 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-// Реальные контендеры Kentucky Derby 2026
-const contenders = [
-  {
-    name: "Commandment",
-    trainer: "Brad Cox",
-    jockey: "F. Prat",
-    odds: "6/1",
-    stats: { form: 95, speed: 85, class: 90 },
-    lastRace: "Florida Derby (G1)",
-    lastResult: "1-е место",
-    streak: "4 победы подряд",
-  },
-  {
-    name: "Renegade",
-    trainer: "B. Baffert",
-    jockey: "J. Velazquez",
-    odds: "4/1",
-    stats: { form: 90, speed: 90, class: 80 },
-    lastRace: "Arkansas Derby (G1)",
-    lastResult: "1-е место",
-    streak: "Главный фаворит букмекеров",
-  },
-  {
-    name: "Further Ado",
-    trainer: "Brad Cox",
-    jockey: "I. Ortiz Jr",
-    odds: "8/1",
-    stats: { form: 88, speed: 80, class: 85 },
-    lastRace: "Blue Grass Stakes (G1)",
-    lastResult: "1-е (+11 корп.)",
-    streak: "Разгромная победа в Blue Grass",
-  },
-  {
-    name: "So Happy",
-    trainer: "P. D'Amato",
-    jockey: "U. Rispoli",
-    odds: "12/1",
-    stats: { form: 75, speed: 82, class: 70 },
-    lastRace: "Santa Anita Derby (G1)",
-    lastResult: "1-е место",
-    streak: "Сюрприз сезона на 8/1",
-  },
-];
-
-const prepRaces = [
-  { race: "Florida Derby (G1)", winner: "Commandment", date: "29 мар", margin: "уверенно" },
-  { race: "Blue Grass Stakes (G1)", winner: "Further Ado", date: "5 апр", margin: "+11 корп." },
-  { race: "Santa Anita Derby (G1)", winner: "So Happy", date: "5 апр", margin: "+2¾ корп." },
-  { race: "Arkansas Derby (G1)", winner: "Renegade", date: "5 апр", margin: "убедительно" },
-];
+import { useTranslations } from "next-intl";
 
 // Stat bar — горизонтальная полоска
 function StatBar({ value, delay }: { value: number; delay: number }) {
@@ -70,6 +20,59 @@ function StatBar({ value, delay }: { value: number; delay: number }) {
 
 // Претенденты Kentucky Derby 2026
 export default function DerbyContenders() {
+  const t = useTranslations("derbyContenders");
+
+  // Реальные контендеры Kentucky Derby 2026
+  const contenders = [
+    {
+      name: "Commandment",
+      trainer: "Brad Cox",
+      jockey: "F. Prat",
+      odds: "6/1",
+      stats: { form: 95, speed: 85, class: 90 },
+      lastRace: "Florida Derby (G1)",
+      lastResult: t("commandmentResult"),
+      streak: t("commandmentStreak"),
+    },
+    {
+      name: "Renegade",
+      trainer: "B. Baffert",
+      jockey: "J. Velazquez",
+      odds: "4/1",
+      stats: { form: 90, speed: 90, class: 80 },
+      lastRace: "Arkansas Derby (G1)",
+      lastResult: t("renegadeResult"),
+      streak: t("renegadeStreak"),
+    },
+    {
+      name: "Further Ado",
+      trainer: "Brad Cox",
+      jockey: "I. Ortiz Jr",
+      odds: "8/1",
+      stats: { form: 88, speed: 80, class: 85 },
+      lastRace: "Blue Grass Stakes (G1)",
+      lastResult: t("furtherAdoResult"),
+      streak: t("furtherAdoStreak"),
+    },
+    {
+      name: "So Happy",
+      trainer: "P. D'Amato",
+      jockey: "U. Rispoli",
+      odds: "12/1",
+      stats: { form: 75, speed: 82, class: 70 },
+      lastRace: "Santa Anita Derby (G1)",
+      lastResult: t("soHappyResult"),
+      streak: t("soHappyStreak"),
+    },
+  ];
+
+  const prepRaces = [
+    { race: "Florida Derby (G1)", winner: "Commandment", date: t("prepFloridaDate"), margin: t("prepFloridaMargin") },
+    { race: "Blue Grass Stakes (G1)", winner: "Further Ado", date: t("prepBlueGrassDate"), margin: t("prepBlueGrassMargin") },
+    { race: "Santa Anita Derby (G1)", winner: "So Happy", date: t("prepSantaAnitaDate"), margin: t("prepSantaAnitaMargin") },
+    { race: "Arkansas Derby (G1)", winner: "Renegade", date: t("prepArkansasDate"), margin: t("prepArkansasMargin") },
+  ];
+
   return (
     <section className="py-32 md:py-48 px-8 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto">
@@ -81,13 +84,13 @@ export default function DerbyContenders() {
           className="text-center mb-20"
         >
           <p className="text-dark-gold text-xs tracking-[0.5em] uppercase mb-8">
-            Kentucky Derby 2026 · 2 мая
+            {t("label")}
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl text-dark-text leading-tight mb-6">
-            Главные претенденты
+            {t("title")}
           </h2>
           <p className="text-dark-text-muted text-lg max-w-2xl mx-auto">
-            Четвёрка лидеров по результатам подготовительных гонок G1
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -122,9 +125,9 @@ export default function DerbyContenders() {
               {/* Stat bars */}
               <div className="space-y-3 mb-6">
                 {[
-                  { label: "Форма", value: horse.stats.form },
-                  { label: "Скорость", value: horse.stats.speed },
-                  { label: "Класс", value: horse.stats.class },
+                  { label: t("formStat"), value: horse.stats.form },
+                  { label: t("speedStat"), value: horse.stats.speed },
+                  { label: t("classStat"), value: horse.stats.class },
                 ].map((stat, j) => (
                   <div key={stat.label} className="flex items-center gap-3">
                     <span className="text-dark-text-muted text-[11px] w-16 shrink-0">{stat.label}</span>
@@ -159,17 +162,17 @@ export default function DerbyContenders() {
           transition={{ delay: 0.3 }}
         >
           <p className="text-dark-gold text-xs tracking-[0.3em] uppercase mb-6">
-            Результаты подготовительных гонок
+            {t("prepRaces")}
           </p>
 
           <div className="overflow-x-auto">
             <table className="w-full min-w-[500px]">
               <thead>
                 <tr className="border-b border-dark-gold/30">
-                  <th className="text-left py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">Гонка</th>
-                  <th className="text-left py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">Победитель</th>
-                  <th className="text-center py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">Дата</th>
-                  <th className="text-right py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">Отрыв</th>
+                  <th className="text-left py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">{t("race")}</th>
+                  <th className="text-left py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">{t("winner")}</th>
+                  <th className="text-center py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">{t("date")}</th>
+                  <th className="text-right py-4 text-xs text-dark-text-muted tracking-[0.2em] uppercase">{t("margin")}</th>
                 </tr>
               </thead>
               <tbody>

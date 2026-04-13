@@ -1,0 +1,379 @@
+{
+  "nav": {
+    "beginners": "For Beginners",
+    "races": "Races 2026",
+    "what": "What Are",
+    "track": "Track",
+    "distances": "Distances",
+    "facts": "Facts",
+    "calculator": "Calculator",
+    "stars": "Stars",
+    "favorites": "Favorites",
+    "grandNational": "Grand National",
+    "timeline": "Timeline",
+    "analytics": "Analytics",
+    "map": "Map",
+    "contenders": "Contenders",
+    "events": "Events"
+  },
+  "hero": {
+    "label": "Beginner's Guide",
+    "title1": "Horse Racing",
+    "titleFor": "for",
+    "title2": "Beginners",
+    "subtitle": "Horse racing might seem complicated, but it's actually quite simple: several horses start at the same time, and the one that crosses the finish line first wins."
+  },
+  "whatAreRaces": {
+    "title": "What Are Horse Races",
+    "p1": "Most races feature 8–12 horses. They all start simultaneously from special gates and run along the same track.",
+    "quote": "The horse that crosses the finish line first wins. A single race lasts 1 to 3 minutes — the result is known almost instantly.",
+    "gates": "Starting Gates",
+    "gatesDesc": "All horses start at the same time",
+    "circuit": "Circuit Track",
+    "circuitDesc": "Oval track at the racecourse",
+    "turn": "Turn",
+    "turnDesc": "This is where position is decided",
+    "finish": "Home Straight",
+    "finishDesc": "The final 200–400 meters"
+  },
+  "trackDiagram": {
+    "label": "How the Track Works",
+    "title": "Anatomy of a Racecourse",
+    "startFinish": "Start / Finish",
+    "turn1": "1st Turn",
+    "backStraight": "Back Straight",
+    "turn2": "2nd Turn",
+    "homeStraight": "Home Straight →",
+    "description": "Most racecourses have an oval shape. The decisive burst happens on the home straight — the final 200–400 meters."
+  },
+  "distances": {
+    "label": "Race Types",
+    "title": "Three Main Distances",
+    "sprintTitle": "Sprint",
+    "sprintMeters": "~1200 m",
+    "sprintTime": "~1 minute",
+    "sprintDesc": "These are the fastest races. Horses reach top speed right away, and the race is over in about a minute. Spectators love them because they're incredibly dynamic.",
+    "middleTitle": "Middle Distance",
+    "middleMeters": "1600–2000 m",
+    "middleTime": "~2 minutes",
+    "middleDesc": "The most popular type of race. Here, it's not just about speed but also about pacing correctly. Many famous tournaments are run at these distances.",
+    "longTitle": "Long Distance",
+    "longMeters": "2400+ m",
+    "longTime": "~3 minutes",
+    "longDesc": "This is a true test of endurance. The jockey must manage the horse's energy wisely so it can accelerate at the finish."
+  },
+  "funFacts": {
+    "label": "Fun Facts",
+    "title": "Racing in Numbers",
+    "speedLabel": "Top Speed",
+    "speedUnit": "km/h",
+    "speedDesc": "Average speed of a racehorse in a sprint. That's faster than the speed limit in the city.",
+    "weightLabel": "Horse Weight",
+    "weightUnit": "kg",
+    "weightDesc": "Average weight of a thoroughbred racehorse. Meanwhile, a jockey weighs only 50–55 kg.",
+    "historyLabel": "Racing History",
+    "historyUnit": "years",
+    "historyDesc": "Horse racing as an organized sport has existed since the 18th century. The first Derby took place in 1780.",
+    "prizeLabel": "Prize Record",
+    "prizeDesc": "The Saudi Cup is the richest race in the world with a prize fund of $35 million."
+  },
+  "calculator": {
+    "label": "Try It Yourself",
+    "title": "Betting",
+    "titleItalic": "Calculator",
+    "description": "Move the sliders to see how the potential winnings change depending on the bet amount and odds.",
+    "betAmount": "Bet Amount",
+    "odds": "Odds",
+    "favorite": "Favorite",
+    "medium": "Medium",
+    "outsider": "Outsider",
+    "darkHorse": "Dark Horse",
+    "winnings": "Winnings",
+    "netProfit": "Net Profit"
+  },
+  "starsSection": {
+    "label": "More About the Favorites",
+    "title": "Racing Stars of 2026",
+    "subtitle": "Learn more about each horse — their style, history, and why they're worth watching.",
+    "betButton": "Place a Bet"
+  },
+  "comparison": {
+    "label": "Comparison",
+    "title": "Who's Your Favorite?",
+    "subtitle": "Compare key metrics of the five stars of the season to make an informed choice.",
+    "horse": "Horse",
+    "wins": "Wins",
+    "winRate": "Win %",
+    "distance": "Distance",
+    "odds": "Odds",
+    "style": "Style",
+    "form": "Form",
+    "visualComparison": "Visual Comparison",
+    "speed": "Speed",
+    "endurance": "Endurance",
+    "consistency": "Consistency",
+    "distLong": "Long",
+    "distSprint": "Sprint",
+    "distMiddle": "Middle",
+    "styleStable": "Steady",
+    "styleAggressive": "Aggressive",
+    "styleReliable": "Reliable",
+    "styleClassic": "Classic",
+    "styleVeteran": "Veteran"
+  },
+  "steps": {
+    "label": "How to Start",
+    "title": "Three Simple Steps",
+    "step1Title": "Choose a Race",
+    "step1Desc": "Open the schedule and pick a race that interests you. Pay attention to the start time and the list of runners.",
+    "step2Title": "Study the Runners",
+    "step2Desc": "Check the list of horses, their odds, and recent performance stats. This will help you make an informed choice.",
+    "step3Title": "Place a Bet",
+    "step3Desc": "Pick a horse and enter the amount. Once confirmed, the bet is locked in, and all that's left is to wait for the race to start."
+  },
+  "photoDivider": {
+    "hippodrome": "A modern racecourse — an arena for hundreds of thousands of spectators",
+    "emotion": "Every race is a storm of emotion and strategy",
+    "journey": "Ready to start your journey into the world of horse racing?"
+  },
+  "footer": {
+    "description": "Everything about horse racing: from the basics to the main events of the season",
+    "sections": "Sections",
+    "landings": "Landings",
+    "beginnersLink": "Racing for Beginners",
+    "racesLink": "Races 2026",
+    "copyright": "© 2026 RaceHub. Informational resource. All data is for reference purposes only."
+  },
+  "heroDark": {
+    "label": "Season 2026",
+    "title1": "Horse Racing — a sport",
+    "title2": "you feel with",
+    "title3": "your heart",
+    "subtitle": "It's not just a race. It's the moment when everything comes down to seconds, instinct, and character — horse and human."
+  },
+  "seasonIntro": {
+    "p1": "Horse racing has existed for centuries, yet it still evokes the same emotions: tension, excitement, and that unforgettable 'wow' moment at the finish.",
+    "p2": "The best racehorses train for years to deliver the perfect combination of speed, endurance, and tactics. Millions of fans follow their performances.",
+    "readyTitle": "Ready to try?",
+    "readyLine1": "Pick your favorite.",
+    "readyLine2": "Feel the thrill of the start.",
+    "readyLine3": "And catch that rush of excitement.",
+    "viewEvents": "View Events"
+  },
+  "countdown": {
+    "label": "Upcoming Event",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "started": "Event has started",
+    "details": "Details",
+    "grandNationalLocation": "Aintree, Liverpool",
+    "kentuckyDerbyLocation": "Churchill Downs, Louisville",
+    "preaknessLocation": "Pimlico, Baltimore",
+    "arcLocation": "ParisLongchamp, Paris",
+    "breedersCupLocation": "Keeneland, Lexington"
+  },
+  "grandNationalPreview": {
+    "label": "Upcoming Event · April 11, 2026",
+    "title": "Grand National Festival",
+    "subtitle": "Aintree, Liverpool · 16:00 BST · Willie Mullins enters 9 horses (26% of the field). I Am Maximus attempts to become the first horse with three consecutive wins.",
+    "favoritesLabel": "Top Favorites · odds",
+    "note2xChamp": "2x champion",
+    "note2nd2025": "2nd place 2025",
+    "note4th2025": "4th place 2025",
+    "keyFacts": "Key Facts",
+    "participants": "Runners",
+    "fences": "Fences",
+    "kmDistance": "km distance",
+    "prizeFund": "Prize Fund",
+    "insightLabel": "Insight:",
+    "insight": "23 of 34 runners train in Ireland. The favorite wins the Grand National only 17% of the time — it's one of the most unpredictable races in the world."
+  },
+  "stats": {
+    "mainEvents": "Major\nEvents",
+    "continents": "Continents",
+    "prizeDollars": "Dollars\nin Prizes",
+    "horsesOnStart": "Horses\nat the Start"
+  },
+  "seasonTimeline": {
+    "label": "Schedule",
+    "title": "Season 2026",
+    "grandNational": {
+      "month": "APR",
+      "location": "Liverpool, England",
+      "date": "April 11",
+      "description": "The most famous steeplechase in the world. 4 miles, 30 fences."
+    },
+    "kentuckyDerby": {
+      "month": "MAY",
+      "location": "Louisville, USA",
+      "date": "May 2",
+      "description": "\"The most exciting two minutes in sports.\" A race for three-year-olds over 2 km."
+    },
+    "preakness": {
+      "month": "MAY",
+      "location": "Baltimore, USA",
+      "date": "May 16",
+      "description": "The second leg of the Triple Crown. Strategy decides everything."
+    },
+    "arc": {
+      "month": "OCT",
+      "location": "Paris, France",
+      "date": "October 4",
+      "description": "Europe's premier race. The world's best compete at Longchamp."
+    },
+    "breedersCup": {
+      "month": "OCT",
+      "location": "Del Mar, USA",
+      "date": "October 30–31",
+      "description": "The grand finale of the season — the world championship of horse racing."
+    }
+  },
+  "historicalStats": {
+    "label": "Analytics",
+    "title": "Grand National Patterns",
+    "subtitle": "71 years of statistics — what actually affects the outcome",
+    "favoritesRare": "Favorites rarely win",
+    "favoritesText": "The favorite won 12 out of 71 post-war races. In 37 cases, the favorite didn't even finish.",
+    "favoritesOf": "favorites",
+    "recentWinners": "Recent Winners",
+    "winnerProfile": "Ideal Winner Profile",
+    "weightVsWins": "Weight vs. Wins",
+    "age": "Age 8–11 years",
+    "ageDetail": "89% of winners",
+    "weightUnder": "Weight under 11 stone",
+    "weightDetail": "7 of the last 9",
+    "irishTrainer": "Irish trainer",
+    "irishDetail": "23 of 34 in 2026",
+    "experience": "30-fence experience",
+    "experienceDetail": "Essential",
+    "goodForm": "Good form",
+    "formDetail": "Only 17% of favorites",
+    "weightUnder10": "Under 10 stone",
+    "weight10to11": "10–11 stone",
+    "weightOver11": "Over 11 stone",
+    "lightHorses": "Lighter horses statistically win more often. From 1989 to 2004, no horse carrying 11+ stone won."
+  },
+  "derbyContenders": {
+    "label": "Kentucky Derby 2026 · May 2",
+    "title": "Top Contenders",
+    "subtitle": "The leading four based on G1 prep race results",
+    "formStat": "Form",
+    "speedStat": "Speed",
+    "classStat": "Class",
+    "prepRaces": "Prep Race Results",
+    "race": "Race",
+    "winner": "Winner",
+    "date": "Date",
+    "margin": "Margin",
+    "commandmentResult": "1st place",
+    "commandmentStreak": "4 wins in a row",
+    "renegadeResult": "1st place",
+    "renegadeStreak": "Bookmakers' top favorite",
+    "furtherAdoResult": "1st (+11 lengths)",
+    "furtherAdoStreak": "Dominant Blue Grass victory",
+    "soHappyResult": "1st place",
+    "soHappyStreak": "Season surprise at 8/1",
+    "prepFloridaDate": "Mar 29",
+    "prepFloridaMargin": "convincingly",
+    "prepBlueGrassDate": "Apr 5",
+    "prepBlueGrassMargin": "+11 lengths",
+    "prepSantaAnitaDate": "Apr 5",
+    "prepSantaAnitaMargin": "+2¾ lengths",
+    "prepArkansasDate": "Apr 5",
+    "prepArkansasMargin": "decisively"
+  },
+  "worldMap": {
+    "label": "Geography",
+    "title": "Racing Around the World",
+    "prizes": "Prizes",
+    "distanceLabel": "Distance",
+    "horsesLabel": "Horses",
+    "grandNationalCity": "Liverpool, England",
+    "grandNationalDate": "April 2026",
+    "grandNationalDistance": "7.2 km",
+    "kentuckyDerbyCity": "Louisville, USA",
+    "kentuckyDerbyDate": "May 2026",
+    "kentuckyDerbyDistance": "2 km",
+    "preaknessCity": "Baltimore, USA",
+    "preaknessDate": "May 2026",
+    "preaknessDistance": "1.9 km",
+    "arcCity": "Paris, France",
+    "arcDate": "October 2026",
+    "arcDistance": "2.4 km",
+    "breedersCupCity": "Del Mar, USA",
+    "breedersCupDate": "October 2026",
+    "breedersCupDistance": "Various"
+  },
+  "raceEvents": {
+    "calendarLabel": "Calendar",
+    "title": "Major Races of 2026",
+    "subtitle": "This is where favorites take the stage, new stars are born, and all predictions are shattered.",
+    "betButton": "Place a Bet"
+  },
+  "photoDividerDark": {
+    "five": "Five major events of the season across three continents",
+    "history": "Every race is a story written at full speed"
+  },
+  "horses": {
+    "iroko": {
+      "country": "France",
+      "description": "Iroko is a classic 'silent killer' on the course: he doesn't stand out, but consistently finishes among the leaders.",
+      "why": "This is the pick for those who want to minimize risk and play it safe. Light weight and an experienced jockey make him especially dangerous over long distances."
+    },
+    "commandment": {
+      "country": "USA",
+      "description": "Commandment is all about explosive speed and pressure from the very start. His Risen Star Stakes victory made him one of the most talked-about young contenders.",
+      "why": "Perfect for those who crave adrenaline: a bet on him is always 'all or nothing.' Paired with a strong jockey, he can set a pace that simply breaks the race apart."
+    },
+    "barnes": {
+      "country": "USA",
+      "description": "Barnes is a symbol of reliability: after the Kentucky Derby, he proved he can maintain form and hold his own against top competition.",
+      "why": "This is the quintessential 'smart pick' — not the most hyped, but often the most rewarding. In the hands of one of America's top jockeys, he becomes even more dangerous."
+    },
+    "minnieHauk": {
+      "country": "France",
+      "description": "Minnie Hauk is the embodiment of class and pedigree. She's already being called a future Prix de l'Arc de Triomphe-level star.",
+      "why": "Betting on her means backing obvious talent. A world-class experienced jockey only strengthens the feeling that everything is 'under control.'"
+    },
+    "senorBuscador": {
+      "country": "USA",
+      "description": "Senor Buscador is a veteran with character who has fought back into contention time and again when everyone had written him off. G1-level experience makes him dangerous against any field.",
+      "why": "This is a comeback story you can't help but root for. With his jockey, he's capable of delivering the maximum even in the toughest races."
+    }
+  },
+  "raceEventsData": {
+    "grandNational": {
+      "date": "April 2026",
+      "month": "APR",
+      "description": "The Grand National is a survival test where favorites often lose to those who simply endured the distance. Every second is filled with tension, and the finish is almost always a story against the odds."
+    },
+    "kentuckyDerby": {
+      "date": "May 2026",
+      "month": "MAY",
+      "description": "The Kentucky Derby is the moment when stars are born. Young horses take to the track with a chance to make history."
+    },
+    "preakness": {
+      "date": "May 2026",
+      "month": "MAY",
+      "description": "After the Derby, this is where the true staying power of a champion is tested. The Preakness is a race where strategy takes center stage, and mistakes are costly."
+    },
+    "arc": {
+      "date": "October 2026",
+      "month": "OCT",
+      "description": "The Arc is Europe's premier race, where the very best meet head to head."
+    },
+    "breedersCup": {
+      "date": "October 2026",
+      "month": "OCT",
+      "description": "The Breeders' Cup is the grand finale of the season — effectively a 'world championship' that gathers the best from every continent."
+    }
+  },
+  "metadata": {
+    "beginnersTitle": "Horse Racing for Beginners",
+    "beginnersDescription": "A complete guide to horse racing: how races work, distances, a betting calculator, and the stars of the 2026 season.",
+    "racesTitle": "Races 2026 — Major Events of the Season",
+    "racesDescription": "Grand National, Kentucky Derby, Prix de l'Arc de Triomphe, Breeders' Cup. Analytics, odds, real data."
+  }
+}

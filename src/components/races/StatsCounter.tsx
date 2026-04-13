@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 // Анимированный счётчик
 function AnimatedNumber({ target, duration = 2 }: { target: number; duration?: number }) {
@@ -58,15 +59,16 @@ const icons = {
   ),
 };
 
-const stats = [
-  { number: 5, suffix: "", label: "Главных\nсобытий", icon: icons.trophy },
-  { number: 3, suffix: "", label: "Континента", icon: icons.globe },
-  { number: 50, suffix: "M+", label: "Долларов\nпризовых", icon: icons.dollar },
-  { number: 200, suffix: "+", label: "Лошадей\nна старте", icon: icons.horse },
-];
-
 // Статистика — золотые иконки + анимированные цифры
 export default function StatsCounter() {
+  const t = useTranslations("stats");
+
+  const stats = [
+    { number: 5, suffix: "", label: t("mainEvents"), icon: icons.trophy },
+    { number: 3, suffix: "", label: t("continents"), icon: icons.globe },
+    { number: 50, suffix: "M+", label: t("prizeDollars"), icon: icons.dollar },
+    { number: 200, suffix: "+", label: t("horsesOnStart"), icon: icons.horse },
+  ];
   return (
     <section className="py-32 md:py-40 px-8 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Subtle фоновый градиент */}
